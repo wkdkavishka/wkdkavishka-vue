@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">wkdkavishka</string>
+    <string name="title_activity_main">wkdkavishka</string>
+    <string name="package_name">com.wkdkavishka.site</string>
+    <string name="custom_url_scheme">com.wkdkavishka.site</string>
+</resources>
