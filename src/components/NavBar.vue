@@ -1,13 +1,13 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div class="relative bg-teal-900 pt-8 pb-6">
+  <div class="bg-teal-900 pt-0 pb-0">
     <div class="container mx-auto px-4">
       <nav class="flex items-center justify-between flex-wrap py-3 px-4">
         <!-- profile picture and name -->
         <div class="flex-col items-center text-white mr-6">
           <div class="flex justify-center">
             <img
-              class="w-24 h-24 mb-3 rounded-full shadow-md"
+              class="w-36 h-36 mb-3 rounded-full shadow-md"
               src="@/assets/images/dk-logo.jpg"
               alt="Bonnie image"
             />
@@ -102,13 +102,3 @@ const toggleDark = useToggle(useDark());
 // const isOpen = ref(false);
 // const alwaysOpen = ref(true);
 </script>
-
-<!-- <script>
-export default {
-  data() {
-    return {
-      isOpen: false,
-    };
-  },
-};
-</script> -->

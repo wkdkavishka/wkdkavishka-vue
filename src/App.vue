@@ -1,7 +1,9 @@
 <template>
   <div>
-    <NavBar />
-    <router-view />
+    <NavBar class="fixed top-0 w-full z-0" />
+    <!-- to fix nav-bar covering the router-view  -->
+    <div class="pt-64"></div>
+    <router-view class="pt-3 z-0" />
     <FooterBar />
   </div>
 </template>
