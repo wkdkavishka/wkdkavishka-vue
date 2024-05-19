@@ -13,14 +13,10 @@
             />
           </div>
           <div class="flex justify-center">
-            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-              W.K.D.Kavishka
-            </h5>
+            <h5 class="mb-1 text-xl font-medium text-white">W.K.D.Kavishka</h5>
           </div>
           <div class="flex justify-center">
-            <span class="text-sm text-gray-500 dark:text-gray-400"
-              >Software Enginear</span
-            >
+            <span class="text-sm text-gray-400">Software Enginear</span>
           </div>
           <div id="download" class="flex justify-center">
             <a
@@ -64,11 +60,11 @@
         <div>
           <button
             id="toggledark"
-            class="sm:hidden h-12 w-12 rounded-md p-2 md:block ali"
+            class="h-12 w-12 rounded-md p-2 block ali"
             @click="toggleDark()"
           >
             <svg
-              class="fill-violet-700 block dark:hidden"
+              class="fill-violet-700 hidden dark:block"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -77,7 +73,7 @@
               ></path>
             </svg>
             <svg
-              class="fill-yellow-500 hidden dark:block"
+              class="fill-yellow-500 block dark:hidden"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -99,6 +95,6 @@ import { ref } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 const toggleDark = useToggle(useDark());
-// const isOpen = ref(false);
+const isOpen = ref(false);
 // const alwaysOpen = ref(true);
 </script>
