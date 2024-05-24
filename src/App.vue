@@ -3,7 +3,8 @@
     <NavBar class="fixed top-0 w-full z-0" />
     <!-- to fix nav-bar covering the router-view  -->
     <div class="pt-64"></div>
-    <router-view class="pt-3 z-0" />
+    <div class="pt-4"></div>
+    <router-view />
     <FooterBar />
   </div>
 </template>
