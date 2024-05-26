@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "@capacitor/android": "next",
-    "@capacitor/core": "next",
+    "@capacitor/app": "6.0.0",
+    "@capacitor/core": "6.0.0",
+    "@capacitor/haptics": "6.0.0",
+    "@capacitor/keyboard": "6.0.0",
+    "@capacitor/status-bar": "6.0.0",
+    "@tailwindcss/forms": "^0.5.7",
     "@vue/cli": "^5.0.8",
     "@vueuse/core": "^10.9.0",
     "core-js": "^3.8.3",
@@ -18,8 +23,9 @@
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3"
   },
+  
   "devDependencies": {
-    "@capacitor/cli": "next",
+    "@capacitor/cli": "6.0.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
