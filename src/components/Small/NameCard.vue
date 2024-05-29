@@ -1,7 +1,9 @@
 <template>
   <!-- name card -->
   <div role="listitem" class="my-4 mx-6">
-    <div class="rounded overflow-hidden shadow-md bg-slate-50">
+    <div
+      class="rounded overflow-hidden shadow-md bg-slate-50 dark:bg-custom-darker"
+    >
       <div class="w-full flex justify-center mt-2">
         <div class="h-32 w-32">
           <img
@@ -13,8 +15,10 @@
         </div>
       </div>
       <div class="px-6 mt-2">
-        <h1 class="font-bold text-3xl text-center mb-1">{{ name }}</h1>
-        <p class="text-gray-800 text-sm text-center">
+        <h1 class="font-bold text-3xl text-center mb-1 dark:text-slate-100">
+          {{ name }}
+        </h1>
+        <p class="text-gray-800 text-sm text-center dark:text-slate-100">
           {{ title }}
         </p>
         <!-- <p class="text-center text-gray-600 text-base pt-3 font-normal">

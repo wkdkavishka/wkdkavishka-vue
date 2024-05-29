@@ -16,7 +16,7 @@
             <h5 class="mb-1 text-xl font-medium text-white">W.K.D.Kavishka</h5>
           </div>
           <div class="flex justify-center">
-            <span class="text-sm text-gray-400">Software Enginear</span>
+            <span class="text-sm text-slate-300">Software Enginear</span>
           </div>
           <div id="download" class="flex justify-center">
             <a
@@ -37,18 +37,19 @@
             <RouterLink
               to="/"
               class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
-              >Home</RouterLink
-            >
+              >Home
+            </RouterLink>
             <a
-              href="#responsive-header"
+              href="/gallery"
               class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
             >
-              Examples </a
-            ><RouterLink
+              Gallery
+            </a>
+            <RouterLink
               to="/contactme"
               class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
-              >Contace Me</RouterLink
-            >
+              >Contace Me
+            </RouterLink>
           </div>
         </div>
         <!-- end -->

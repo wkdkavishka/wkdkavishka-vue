@@ -5,13 +5,15 @@
     <!-- about me -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2
+          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
+        >
           Who Am I
         </h2>
 
-        <hr class="my-1 border-blueGray-600" />
+        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
 
-        <p class="mt-2 text-lg leading-8 text-gray-600">
+        <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-slate-300">
           About me write something serious
         </p>
 
@@ -35,12 +37,14 @@
             >
               <a href="#">
                 <span
-                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-                ></span>
-                What I Provide
+                  class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-100"
+                  >What I Provide
+                </span>
               </a>
             </h3>
-            <p class="mt-1 line-clamp-3 text-md leading-6 text-gray-600">
+            <p
+              class="mt-1 line-clamp-3 text-md leading-6 text-gray-600 dark:text-slate-300"
+            >
               servicess provide
             </p>
           </div>
@@ -61,10 +65,10 @@
     <!-- familiar technologies -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 pt-6">
-        <hr class="my-1 border-blueGray-600" />
+        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
 
         <h1
-          class="font-bold text-3xl text-center text-gray-800 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
+          class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
           Familiar Technologies
         </h1>
@@ -113,9 +117,9 @@
     <!-- testimonials section -->
     <section>
       <div class="mx-auto max-w-7xl py-2 pt-6">
-        <hr class="my-1 border-blueGray-600" />
+        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
         <h1
-          class="font-bold text-3xl text-center text-gray-800 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
+          class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
           Testimonials
         </h1>
@@ -132,10 +136,10 @@
 <script setup>
 import { defineProps, ref } from "vue";
 import NameCard from "@/components/Small/NameCard.vue";
-import ImageCarousel from "@/components/Small/ImageCarousel.vue";
-import ImageCarouselGallery from "@/components/Small/ImageCarouselGallery.vue";
-import ImageCarouselCard from "@/components/Small/ImageCarouselCard.vue";
-import ImageCarouselCardActive from "@/components/Small/ImageCarouselCardActive.vue";
+import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
+import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGallery.vue";
+import ImageCarouselCard from "@/components/Small/carousel/ImageCarouselCard.vue";
+import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
 
 const _images = [
   { id: 1, url: "https://picsum.photos/300/200?q=1" },
