@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-teal-200 dark:bg-teal-400">
-    <NavBar class="fixed top-0 w-full z-0" />
+  <div class="bg-slate-200">
+    <NavBar class="fixed top-0 w-full z-50" />
     <!-- to fix nav-bar covering the router-view  -->
     <div class="pt-64"></div>
     <div class="pt-4"></div>
@@ -10,6 +10,6 @@
 </template>
 
 <script setup>
-import NavBar from "./components/NavBar.vue";
-import FooterBar from "./components/FooterBar.vue";
+import NavBar from "./components/MainUse/NavBar.vue";
+import FooterBar from "./components/MainUse/FooterBar.vue";
 </script>
