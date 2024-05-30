@@ -134,7 +134,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import NameCard from "@/components/Small/NameCard.vue";
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
 import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGallery.vue";

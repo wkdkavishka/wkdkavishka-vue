@@ -10,9 +10,11 @@
   "dependencies": {
     "@capacitor/android": "next",
     "@capacitor/app": "6.0.0",
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/core": "6.0.0",
     "@capacitor/haptics": "6.0.0",
     "@capacitor/keyboard": "6.0.0",
+    "@capacitor/splash-screen": "^6.0.0",
     "@capacitor/status-bar": "6.0.0",
     "@tailwindcss/forms": "^0.5.7",
     "@vue/cli": "^5.0.8",
