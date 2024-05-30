@@ -2,7 +2,7 @@
 <template>
   <div class="bg-teal-900 pt-0 pb-0">
     <div class="container mx-auto px-0 md:px-4">
-      <nav class="flex items-center justify-between flex-wrap py-3 px-4">
+      <nav class="flex items-center justify-between flex-wrap py-1 px-2">
         <!-- profile picture and name -->
         <div class="flex-col items-center text-white mr-6">
           <div class="flex justify-center">
