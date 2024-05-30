@@ -58,7 +58,6 @@
         <ImageCarousel :list="images" />
 
         <!-- test image carouselGallery -->
-        <!--        <ImageCarouselGallery :list="images" />-->
       </div>
     </section>
 
@@ -121,7 +120,7 @@
         <h1
           class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
-          Testimonials
+          People I've Worked With
         </h1>
         <!-- test image carouselGallery -->
         <!--        <ImageCarouselGallery :list="images" />-->
@@ -135,22 +134,21 @@
 
 <script setup>
 import { ref } from "vue";
-import NameCard from "@/components/Small/NameCard.vue";
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
-import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGallery.vue";
-import ImageCarouselCard from "@/components/Small/carousel/ImageCarouselCard.vue";
 import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
 
+const isOpen = ref(false);
+
 const _images = [
-  { id: 1, url: "https://picsum.photos/300/200?q=1" },
-  { id: 2, url: "https://picsum.photos/300/200?q=2" },
-  { id: 3, url: "https://picsum.photos/300/200?q=3" },
-  { id: 4, url: "https://picsum.photos/300/200?q=4" },
-  { id: 5, url: "https://picsum.photos/300/200?q=5" },
-  { id: 6, url: "https://picsum.photos/300/200?q=6" },
-  { id: 7, url: "https://picsum.photos/300/200?q=7" },
-  { id: 8, url: "https://picsum.photos/300/200?q=8" },
-  { id: 9, url: "https://picsum.photos/300/200?q=9" },
+  { id: 1, url: "../../img/icons/Images/1.png" },
+  { id: 2, url: "../../img/icons/Images/2.png" },
+  { id: 3, url: "../../img/icons/Images/3.png" },
+  { id: 4, url: "../../img/icons/Images/4.png" },
+  { id: 5, url: "../../img/icons/Images/5.png" },
+  { id: 6, url: "../../img/icons/Images/6.png" },
+  { id: 7, url: "../../img/icons/Images/7.png" },
+  { id: 8, url: "../../img/icons/Images/8.png" },
+  { id: 9, url: "../../img/icons/Images/9.png" },
 ];
 const images = ref(_images);
 
@@ -159,7 +157,7 @@ const _card = [
     id: 1,
     name: "name 1",
     title: "title 1",
-    image: "https://picsum.photos/300/200?q=1",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
@@ -168,7 +166,7 @@ const _card = [
     id: 2,
     name: "name 2",
     title: "title 2",
-    image: "https://picsum.photos/300/200?q=2",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
@@ -177,7 +175,7 @@ const _card = [
     id: 3,
     name: "name 3",
     title: "title 3",
-    image: "https://picsum.photos/300/200?q=3",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
@@ -186,7 +184,7 @@ const _card = [
     id: 4,
     name: "name 4",
     title: "title 4",
-    image: "https://picsum.photos/300/200?q=4",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
@@ -195,7 +193,7 @@ const _card = [
     id: 5,
     name: "name 5",
     title: "title 5",
-    image: "https://picsum.photos/300/200?q=5",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
@@ -204,7 +202,7 @@ const _card = [
     id: 6,
     name: "name 6",
     title: "title 6",
-    image: "https://picsum.photos/300/200?q=6",
+    image: "img/icons/Images/cards/card.jpg",
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",

@@ -10,7 +10,7 @@
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
-        <img class="object-cover" :src="item.url" :alt="item.url" />
+        <img class="object-cover h-auto w-80" :src="item.url" :alt="item.url" />
       </div>
     </Slide>
 
@@ -44,7 +44,7 @@ const updateItemsToShow = () => {
   } else if (width <= 1200) {
     itemsToShow.value = 2.5;
   } else if (width <= 1536) {
-    itemsToShow.value = 3.5;
+    itemsToShow.value = 3;
   } else {
     itemsToShow.value = 4;
   }
@@ -96,12 +96,12 @@ const props = defineProps({
 }
 
 .carousel__slide--prev {
-  opacity: 0.8;
+  opacity: 0.9;
   transform: rotateY(-10deg) scale(0.9);
 }
 
 .carousel__slide--next {
-  opacity: 0.8;
+  opacity: 0.9;
   transform: rotateY(10deg) scale(0.9);
 }
 

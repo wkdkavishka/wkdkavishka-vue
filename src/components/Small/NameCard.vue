@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="px-6 mt-2">
-        <h1 class="font-bold text-3xl text-center mb-1 dark:text-slate-100">
+        <h1 class="font-bold text-2xl text-center mb-1 dark:text-slate-100">
           {{ name }}
         </h1>
         <p class="text-gray-800 text-sm text-center dark:text-slate-100">

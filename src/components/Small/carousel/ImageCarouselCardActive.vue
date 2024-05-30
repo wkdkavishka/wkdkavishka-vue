@@ -97,26 +97,26 @@ const props = defineProps({
 
 .carousel__slide {
   opacity: 1;
-  transform: rotateY(-20deg) scale(0.9);
+  transform: scale(0.9);
 }
 
 .carousel__slide--active ~ .carousel__slide {
-  transform: rotateY(20deg) scale(0.9);
+  transform: scale(0.9);
 }
 
 .carousel__slide--prev {
   opacity: 0.8;
-  transform: rotateY(-10deg) scale(0.9);
+  transform: scale(0.9);
 }
 
 .carousel__slide--next {
   opacity: 0.8;
-  transform: rotateY(10deg) scale(0.9);
+  transform: scale(0.9);
 }
 
 .carousel__slide--active {
   opacity: 1;
-  transform: rotateY(0) scale(1.1);
+  transform: scale(1.1);
   z-index: 1;
 }
 </style>
