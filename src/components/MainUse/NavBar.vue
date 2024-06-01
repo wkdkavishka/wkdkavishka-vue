@@ -43,17 +43,20 @@
             <div class="text-sm block md:flex justify-between">
               <RouterLink
                 to="/"
-                class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
+                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 >Home
               </RouterLink>
               <RouterLink
                 to="/gallery"
-                class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
+                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 >Gallery
               </RouterLink>
               <RouterLink
                 to="/contactme"
-                class="block mt-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-teal-700 rounded"
+                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 >Contace Me
               </RouterLink>
             </div>

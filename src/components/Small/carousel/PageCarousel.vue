@@ -5,7 +5,7 @@
     :wrap-around="true"
     snap-align="center"
     :transition="500"
-    autoplay="3000"
+    autoplay="2000"
     pause-autoplay-on-hover
   >
     <Slide v-for="item in list" :key="item.id">
