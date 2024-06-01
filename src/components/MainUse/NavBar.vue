@@ -22,7 +22,7 @@
               <div class="flex justify-center">
                 <span class="text-sm text-slate-300">Software Enginear</span>
               </div>
-              <div id="download" class="flex justify-center">
+              <div id="download" type="button" class="flex justify-center">
                 <a
                   href="#"
                   class="text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white md:block md:flex-auto my-1"
@@ -64,8 +64,8 @@
         <!-- theme toggle -->
         <section>
           <div>
-            <button
-              id="toggledark"
+            <div
+              id="toggleDark"
               class="h-12 w-12 rounded-md p-2 block ali"
               @click="toggleDark()"
             >
@@ -89,14 +89,14 @@
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </button>
+            </div>
           </div>
         </section>
 
         <!--    new dark drop down    -->
         <section>
           <div class="relative inline-block text-right">
-            <button
+            <div
               id="menu-button"
               type="button"
               class="text-sm px-3 py-2 leading-none border rounded text-white hover:border-transparent hover:text-teal-500 hover:bg-white my-1 inline-flex"
@@ -117,7 +117,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-            </button>
+            </div>
 
             <!--
               Dropdown menu, show/hide based on menu state.
