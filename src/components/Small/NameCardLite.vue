@@ -27,8 +27,16 @@ import { defineProps } from "vue";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
-  name: { type: String, default: "name" },
-  title: { type: String, default: "title" },
-  image: { type: String, default: "@/assets/images/dk-logo.jpg" },
+  name: { type: String, default: "name", required: true },
+  title: { type: String, default: "title", required: true },
+  git: { type: String, default: "git link", required: true },
+  x: { type: String, default: "x link", required: true },
+  linkedin: { type: String, default: "linkedin link", required: true },
+  image: {
+    type: String,
+    default: "@/assets/images/dk-logo.jpg",
+    required: true,
+  },
+  description: { type: String, default: "Some description", required: true },
 });
 </script>
