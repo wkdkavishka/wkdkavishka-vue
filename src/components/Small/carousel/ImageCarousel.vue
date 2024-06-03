@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
+
 <template>
   <carousel
     v-model="currentSlide"
@@ -10,28 +12,47 @@
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
-        <img class="object-cover h-auto w-80" :src="item.url" :alt="item.url" />
+        <img
+          class="object-cover h-auto w-80"
+          :src="item.url"
+          :alt="item.url"
+          @click.stop="viewFull(item.url)"
+        />
       </div>
     </Slide>
 
     <template #addons="{ slidesCount }">
       <Navigation v-if="slidesCount > 2" />
-      <pagination />
+      <Pagination />
     </template>
   </carousel>
+
+  <ImageModal
+    :is-open="isModalOpen"
+    :image-url="modalImageUrl"
+    @close="isModalOpen = false"
+  />
 </template>
 
 <script setup>
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-import { defineProps, onMounted, onUnmounted, ref } from "vue";
+import { ref, onMounted, onUnmounted, defineProps } from "vue";
+import ImageModal from "@/components/Small/carousel/ImageModal.vue";
 
 // Define reactive state
 const currentSlide = ref(0);
 const itemsToShow = ref(1);
+const isModalOpen = ref(false);
+const modalImageUrl = ref("");
 
 const slideTo = (val) => {
   currentSlide.value = val;
+};
+
+const viewFull = (url) => {
+  modalImageUrl.value = url;
+  isModalOpen.value = true;
 };
 
 // Function to check the screen size and adjust itemsToShow
