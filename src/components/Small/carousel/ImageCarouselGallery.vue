@@ -33,8 +33,9 @@
         <img :alt="item.url" :src="item.url" @click.stop="viewFull(item.url)" />
       </div>
     </Slide>
-    <template #addons>
-      <pagination />
+    <template #addons="{ slidesCount }">
+      <Navigation v-if="slidesCount > 2" />
+      <Pagination />
     </template>
   </Carousel>
   <ImageModal
@@ -71,6 +72,4 @@ const viewFull = (url) => {
   modalImageUrl.value = url;
   isModalOpen.value = true;
 };
-// Extracting images from props
-// const { images } = toRefs(props);
 </script>

@@ -46,8 +46,8 @@ const close = () => {
 }
 
 .modal-image {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 96%;
+  max-height: 96%;
 }
 
 .modal-content {
