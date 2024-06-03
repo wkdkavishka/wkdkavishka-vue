@@ -39,15 +39,15 @@ import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGalle
 import { ref } from "vue";
 
 const _images = [
-  { id: 1, url: "https://picsum.photos/300/200?q=1" },
-  { id: 2, url: "https://picsum.photos/300/200?q=2" },
-  { id: 3, url: "https://picsum.photos/300/200?q=3" },
-  { id: 4, url: "https://picsum.photos/300/200?q=4" },
-  { id: 5, url: "https://picsum.photos/300/200?q=5" },
-  { id: 6, url: "https://picsum.photos/300/200?q=6" },
-  { id: 7, url: "https://picsum.photos/300/200?q=7" },
-  { id: 8, url: "https://picsum.photos/300/200?q=8" },
-  { id: 9, url: "https://picsum.photos/300/200?q=9" },
+  { id: 1, url: "../../img/icons/Images/1.png" },
+  { id: 2, url: "../../img/icons/Images/2.png" },
+  { id: 3, url: "../../img/icons/Images/3.png" },
+  { id: 4, url: "../../img/icons/Images/4.png" },
+  { id: 5, url: "../../img/icons/Images/5.png" },
+  { id: 6, url: "../../img/icons/Images/6.png" },
+  { id: 7, url: "../../img/icons/Images/7.png" },
+  { id: 8, url: "../../img/icons/Images/8.png" },
+  { id: 9, url: "../../img/icons/Images/9.png" },
 ];
 const images = ref(_images);
 </script>

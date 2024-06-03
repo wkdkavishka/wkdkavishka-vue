@@ -10,8 +10,8 @@
               <div class="flex justify-center">
                 <img
                   class="w-36 h-36 mb-3 rounded-full shadow-md"
-                  src="../../../public/img/icons/Images/wkdk-logo.jpg"
-                  alt="Bonnie image"
+                  :src="modalImageUrl"
+                  alt="wkdkImage"
                 />
               </div>
               <div class="flex justify-center">
@@ -183,10 +183,13 @@
 <script setup>
 import { ref } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+import ImageModal from "@/components/Small/carousel/ImageModal.vue";
+
+// Import the image
+import wkdkLogo from "@/assets/Images/wkdk-logo.jpg";
 
 const darkStatus = useDark();
 const toggleDark = useToggle(darkStatus);
 const isOpen = ref(false);
-
-const colour = ref("Default");
+const modalImageUrl = ref(wkdkLogo);
 </script>
