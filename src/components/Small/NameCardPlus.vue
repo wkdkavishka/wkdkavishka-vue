@@ -4,8 +4,8 @@
     <div
       class="rounded overflow-hidden shadow-md bg-slate-50 dark:bg-custom-darker"
     >
-      <div class="w-full flex justify-center mt-2">
-        <div class="h-32 w-32">
+      <div class="w-full flex justify-center px-3 py-3">
+        <div class="h-52 sm:h-64 w-52 sm:w-64">
           <img
             :src="image"
             alt="Display Picture of Andres Berlin"
@@ -21,10 +21,9 @@
         <p class="text-gray-800 text-sm text-center dark:text-slate-100">
           {{ title }}
         </p>
-        <!-- <p class="text-center text-gray-600 text-base pt-3 font-normal">
-            The CEO's role in raising a company's corporate IQ is to establish
-            an atmosphere that promotes knowledge sharing and collaboration.
-          </p> -->
+        <p class="text-center text-gray-600 text-base pt-3 font-normal">
+          {{ description }}
+        </p>
         <div class="w-full flex justify-center pt-5 pb-5">
           <a :href="git" class="mx-5">
             <div aria-label="Github" role="img">

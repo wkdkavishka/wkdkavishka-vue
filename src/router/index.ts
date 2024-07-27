@@ -26,6 +26,16 @@ const router = createRouter({
   // history: createWebHashHistory(),
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  linkExactActiveClass: "!text-yellow-500 dark:!text-yellow-500",
+});
+
+router.beforeEach((to, from, next) => {
+  // Reset hover states here
+  const hoveredElements = document.querySelectorAll(".hovered");
+  hoveredElements.forEach((element) => {
+    element.classList.remove("hovered");
+  });
+  next();
 });
 
 export default router;

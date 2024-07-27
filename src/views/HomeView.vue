@@ -161,6 +161,8 @@ const _card = [
     git: "git link",
     x: "x link",
     linkedin: "linkedin link",
+    description:
+      "test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ",
   },
   {
     id: 2,

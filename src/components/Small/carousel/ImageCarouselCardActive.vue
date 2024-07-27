@@ -18,14 +18,27 @@
           :git="item.git"
           :x="item.x"
           :linkedin="item.linkedin"
+          :description="item.description"
+          @click.stop="viewFull(item)"
         />
       </div>
     </Slide>
-    <template #addons>
-      <pagination />
-      <navigation />
+    <template #addons="{ slidesCount }">
+      <Navigation v-if="slidesCount > 2" />
+      <Pagination />
     </template>
   </Carousel>
+  <CardModal
+    :git="currentItem.git"
+    :image="currentItem.image"
+    :is-open="isModalOpen"
+    :linkedin="currentItem.linkedin"
+    :name="currentItem.name"
+    :title="currentItem.title"
+    :x="currentItem.x"
+    :description="currentItem.description"
+    @close="isModalOpen = false"
+  />
 </template>
 
 <script setup>
@@ -33,14 +46,22 @@ import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 import { defineProps, onMounted, onUnmounted, ref } from "vue";
 import NameCard from "@/components/Small/NameCard.vue";
+import CardModal from "@/components/Small/carousel/CardModal.vue";
 
 // Define reactive state
 const currentSlide = ref(0);
 const itemsToShow = ref(1);
+const isModalOpen = ref(false);
+const currentItem = ref({});
 
 // Define methods
 const slideTo = (val) => {
   currentSlide.value = val;
+};
+
+const viewFull = (item) => {
+  currentItem.value = item;
+  isModalOpen.value = true;
 };
 
 // Function to check the screen size and adjust itemsToShow
