@@ -34,7 +34,7 @@
     </section>
   </div>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGallery.vue";
 import { ref } from "vue";
 

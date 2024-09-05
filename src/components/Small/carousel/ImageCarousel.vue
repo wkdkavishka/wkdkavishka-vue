@@ -4,18 +4,18 @@
   <carousel
     v-model="currentSlide"
     :items-to-show="itemsToShow"
-    :wrap-around="true"
-    snap-align="center"
     :transition="500"
+    :wrap-around="true"
     autoplay="3000"
     pause-autoplay-on-hover
+    snap-align="center"
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
         <img
-          class="object-cover h-auto w-80"
-          :src="item.url"
           :alt="item.url"
+          :src="item.url"
+          class="object-cover h-auto w-80"
           @click.stop="viewFull(item.url)"
         />
       </div>
@@ -28,16 +28,16 @@
   </carousel>
 
   <ImageModal
-    :is-open="isModalOpen"
     :image-url="modalImageUrl"
+    :is-open="isModalOpen"
     @close="isModalOpen = false"
   />
 </template>
 
 <script setup>
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-import { ref, onMounted, onUnmounted, defineProps } from "vue";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import { defineProps, onMounted, onUnmounted, ref } from "vue";
 import ImageModal from "@/components/Small/carousel/ImageModal.vue";
 
 // Define reactive state

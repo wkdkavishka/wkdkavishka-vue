@@ -1,12 +1,12 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <link
-    rel="stylesheet"
     href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css"
+    rel="stylesheet"
   />
   <link
-    rel="stylesheet"
     href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
+    rel="stylesheet"
   />
 
   <footer class="relative bg-slate-100 dark:bg-custom-mid-dark py-2">
@@ -59,8 +59,8 @@
           >
             Copyright ©
             <a
-              href=""
               class="text-blueGray-500 dark:text-slate-300 hover:text-gray-800"
+              href=""
               target="_blank"
             >
               W.K.D.Kavishka

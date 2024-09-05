@@ -1,7 +1,6 @@
-import { createRouter, RouteRecordRaw, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ContactMe from "@/views/ContactMe.vue";
-import Gallery from "@/views/GalleryView.vue";
+import ContactMe from "@/views/ContactMeView.vue";
 import GalleryView from "@/views/GalleryView.vue";
 
 const routes: Array<RouteRecordRaw> = [

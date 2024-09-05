@@ -4,13 +4,13 @@
     id="gallery"
     v-model="currentSlide"
     :items-to-show="1"
-    :wrap-around="true"
     :transition="500"
+    :wrap-around="true"
     snap-align="center"
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__item">
-        <img :src="item.url" :alt="item.url" @click.stop="viewFull(item.url)" />
+        <img :alt="item.url" :src="item.url" @click.stop="viewFull(item.url)" />
       </div>
     </Slide>
     <template #addons="{ slidesCount }">
@@ -23,10 +23,10 @@
     ref="carousel"
     v-model="currentSlide"
     :items-to-show="4.5"
-    :wrap-around="true"
-    snap-align="center"
     :transition="500"
+    :wrap-around="true"
     autoplay="2000"
+    snap-align="center"
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__item" @click="slideTo(item.id - 1)">
@@ -39,15 +39,15 @@
     </template>
   </Carousel>
   <ImageModal
-    :is-open="isModalOpen"
     :image-url="modalImageUrl"
+    :is-open="isModalOpen"
     @close="isModalOpen = false"
   />
 </template>
 
 <script setup>
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import { defineProps, ref } from "vue";
 import ImageModal from "@/components/Small/carousel/ImageModal.vue";
 

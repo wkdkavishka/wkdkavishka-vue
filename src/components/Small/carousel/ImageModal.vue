@@ -6,13 +6,13 @@
     @click="close"
   >
     <div class="modal-content flex align-middle justify-center" @click.stop>
-      <img :src="imageUrl" :alt="imageUrl" class="modal-image" />
+      <img :alt="imageUrl" :src="imageUrl" class="modal-image" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineEmits, defineProps } from "vue";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({

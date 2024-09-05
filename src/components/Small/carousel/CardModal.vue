@@ -7,20 +7,20 @@
   >
     <div class="modal-content flex align-middle justify-center" @click.stop>
       <NameCardPlus
+        :description="description"
+        :git="git"
+        :image="image"
+        :linkedin="linkedin"
         :name="name"
         :title="title"
-        :image="image"
-        :git="git"
         :x="x"
-        :linkedin="linkedin"
-        :description="description"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineEmits, defineProps } from "vue";
 import NameCardPlus from "@/components/Small/NameCardPlus.vue";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

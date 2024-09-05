@@ -3,22 +3,22 @@
   <Carousel
     v-model="currentSlide"
     :items-to-show="itemsToShow"
-    :wrap-around="true"
-    snap-align="center"
     :transition="500"
+    :wrap-around="true"
     autoplay="2000"
     pause-autoplay-on-hover
+    snap-align="center"
   >
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
         <NameCard
+          :description="item.description"
+          :git="item.git"
+          :image="item.image"
+          :linkedin="item.linkedin"
           :name="item.name"
           :title="item.title"
-          :image="item.image"
-          :git="item.git"
           :x="item.x"
-          :linkedin="item.linkedin"
-          :description="item.description"
           @click.stop="viewFull(item)"
         />
       </div>
@@ -29,6 +29,7 @@
     </template>
   </Carousel>
   <CardModal
+    :description="currentItem.description"
     :git="currentItem.git"
     :image="currentItem.image"
     :is-open="isModalOpen"
@@ -36,14 +37,13 @@
     :name="currentItem.name"
     :title="currentItem.title"
     :x="currentItem.x"
-    :description="currentItem.description"
     @close="isModalOpen = false"
   />
 </template>
 
 <script setup>
 import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import { defineProps, onMounted, onUnmounted, ref } from "vue";
 import NameCard from "@/components/Small/NameCard.vue";
 import CardModal from "@/components/Small/carousel/CardModal.vue";

@@ -9,7 +9,7 @@
     <div class="pt-4"></div>
     <!--    <div class="pt-64"> test  </div>-->
     <router-view v-slot="{ Component, route }">
-      <transition name="fade" mode="out-in">
+      <transition mode="out-in" name="fade">
         <component :is="Component" :key="route.path" />
       </transition>
     </router-view>

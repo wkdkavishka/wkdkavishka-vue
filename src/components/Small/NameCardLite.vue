@@ -1,14 +1,14 @@
 <template>
   <!-- name card -->
-  <div role="listitem" class="my-4 mx-6">
+  <div class="my-4 mx-6" role="listitem">
     <div class="rounded overflow-hidden shadow-md bg-slate-50">
       <div class="w-full flex justify-center">
         <div class="h-32 w-32">
           <img
             :src="image"
             alt="Display Picture of Andres Berlin"
-            role="img"
             class="rounded-full object-cover h-full w-full shadow-md"
+            role="img"
           />
         </div>
       </div>
