@@ -25,7 +25,9 @@
               <div id="download" class="flex justify-center" type="button">
                 <a
                   class="text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white md:block md:flex-auto my-1"
-                  href="#"
+                  href="https://mega.nz/file/2BkgnKSI#g21uRHD38bGk5MDTeCbnYqWtcW-0dPOmtqjJnWGOJ2E"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >Download</a
                 >
               </div>
