@@ -1,7 +1,7 @@
 # wkdkavishka-vue
 
 Check Out My site, Hosted on Azura
-https://orange-dune-0ac9a3400.5.azurestaticapps.net/
+https://zealous-hill-0ad399900.5.azurestaticapps.net/
 
 ## Project setup
 
