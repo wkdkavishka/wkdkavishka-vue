@@ -1,3 +1,39 @@
+<!--
+  ContactMeView.vue
+  
+  A Vue 3 component that implements a contact form with EmailJS integration.
+  
+  Features:
+  - Responsive contact form with modern UI using Tailwind CSS
+  - Email sending functionality using EmailJS service
+  - Form validation and privacy policy agreement
+  - Dark mode support
+  - Interactive form elements with proper accessibility
+  
+  Form Fields:
+  - Full Name: Single input for user's complete name
+  - Company: Company/Organization name
+  - Email: User's email address
+  - Phone Number: Contact number with country selection
+  - Message: Multi-line text area for detailed messages
+  
+  Dependencies:
+  - @emailjs/browser: For sending emails
+  - Tailwind CSS: For styling
+  
+  EmailJS Configuration:
+  - Service ID: service_y9ix33i
+  - Template ID: template_e1c3rv8
+  - Public Key: qz_99WqAXBiP0MXqJ
+  
+  Usage:
+  ```vue
+  <template>
+    <ContactMeView />
+  </template>
+  ```
+-->
+
 <template>
   <div id="contactme" class="container mx-auto px-4 py-4">
     <div class="mx-auto max-w-2xl text-center">
@@ -79,18 +115,6 @@
             Phone number
           </label>
           <div class="mt-2.5">
-            <div class="inset-y-0 left-0 flex items-center">
-              <label class="sr-only" for="country">Country</label>
-              <select
-                id="country"
-                class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm text-gray-900 dark:text-gray-200 dark:bg-custom-mid-dark"
-                name="country"
-              >
-                <option>US</option>
-                <option>CA</option>
-                <option>EU</option>
-              </select>
-            </div>
             <input
               id="phone-number"
               autocomplete="tel"
@@ -119,35 +143,23 @@
           </div>
         </div>
         <div class="flex gap-x-4 sm:col-span-2">
-          <div class="flex h-6 items-center">
-            <!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
-            <button
-              aria-checked="false"
-              aria-labelledby="switch-1-label"
-              class="bg-gray-200 flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              role="switch"
-              type="button"
-              @click="privacyAccepted = !privacyAccepted"
+          <label class="inline-flex items-center cursor-pointer">
+            <input
+              v-model="privacyAccepted"
+              type="checkbox"
+              class="sr-only peer"
+            />
+            <div
+              class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 dark:peer-focus:ring-indigo-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"
+            ></div>
+            <span
+              class="ms-3 text-sm leading-6 tracking-tight text-gray-900 dark:text-slate-100"
             >
-              <span class="sr-only">Agree to policies</span>
-              <!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
-              <span
-                aria-hidden="true"
-                :class="[
-                  'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out',
-                  { 'translate-x-3.5': privacyAccepted },
-                ]"
-              ></span>
-            </button>
-          </div>
-          <label
-            id="switch-1-label"
-            class="text-sm leading-6 tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
-          >
-            By selecting this, you agree to our
-            <a class="font-semibold text-indigo-600" href="#"
-              >privacy&nbsp;policy</a
-            >.
+              By selecting this, you agree to our
+              <a class="font-semibold text-indigo-600" href="#"
+                >privacy&nbsp;policy</a
+              >.
+            </span>
           </label>
         </div>
       </div>
@@ -165,13 +177,24 @@
 </template>
 
 <script lang="ts" setup>
+/**
+ * Imports and Dependencies
+ */
 import { ref } from "vue";
 import emailjs from "@emailjs/browser";
 
-const isSubmitting = ref(false);
-const privacyAccepted = ref(false);
+/**
+ * Reactive State
+ */
+const isSubmitting = ref(false); // Tracks form submission state
+const privacyAccepted = ref(false); // Tracks privacy policy acceptance
 
+/**
+ * Handles the form submission and email sending process
+ * @param {Event} e - The form submission event
+ */
 const sendEmail = async (e: Event) => {
+  // Validate privacy policy acceptance
   if (!privacyAccepted.value) {
     alert("Please accept the privacy policy to proceed.");
     return;
@@ -181,6 +204,7 @@ const sendEmail = async (e: Event) => {
     isSubmitting.value = true;
     const form = e.target as HTMLFormElement;
 
+    // Prepare email template parameters
     const templateParams = {
       full_name: form["full-name"].value,
       from_email: form["email"].value,
@@ -190,10 +214,10 @@ const sendEmail = async (e: Event) => {
       to_email: "w.k.d.kavishka@outlook.com",
     };
 
-    // Initialize EmailJS with your public key
+    // Initialize EmailJS with public key
     emailjs.init("qz_99WqAXBiP0MXqJ");
 
-    // Replace these with your EmailJS credentials
+    // Send email using EmailJS service
     await emailjs.send(
       "service_y9ix33i",
       "template_e1c3rv8",
@@ -201,10 +225,12 @@ const sendEmail = async (e: Event) => {
       "qz_99WqAXBiP0MXqJ"
     );
 
+    // Handle successful submission
     alert("Message sent successfully!");
     form.reset();
     privacyAccepted.value = false;
   } catch (error) {
+    // Handle errors
     console.error("Error sending email:", error);
     alert("Failed to send message. Please try again later.");
   } finally {
