@@ -1,19 +1,31 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div class="backdrop-blur-xl bg-teal-900/90 dark:bg-teal-900/70">
+  <div
+    class="backdrop-blur-xl bg-teal-900/90 dark:bg-teal-900/70 transition-all duration-300"
+  >
     <div class="container mx-auto px-0 md:px-4">
-      <nav class="flex items-center justify-between flex-wrap py-1 px-2">
+      <nav
+        :class="{ 'py-1': !showProfile, 'py-4': showProfile }"
+        class="flex items-center justify-between flex-wrap px-2 transition-all duration-300"
+      >
         <!-- profile picture and name -->
-        <section>
-          <div>
-            <div class="flex-col items-center text-white">
-              <div class="flex justify-center">
-                <img
-                  :src="modalImageUrl"
-                  alt="wkdkImage"
-                  class="w-36 h-36 mb-3 rounded-full shadow-md"
-                />
-              </div>
+        <div>
+          <div class="flex-col items-center text-white">
+            <div class="flex justify-center">
+              <img
+                :src="modalImageUrl"
+                alt="wkdkImage"
+                :class="{ 'w-36 h-36': showProfile, 'w-20 h-20': !showProfile }"
+                class="mb-3 rounded-full shadow-md transition-all duration-300"
+              />
+            </div>
+            <div
+              :class="{
+                'opacity-0 h-0 overflow-hidden transition-all duration-300':
+                  !showProfile,
+                'opacity-100 transition-all duration-300': showProfile,
+              }"
+            >
               <div class="flex justify-center">
                 <h5 class="mb-1 text-xl font-medium text-white">
                   W.K.D.Kavishka
@@ -33,7 +45,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         <!-- navigation menu panel -->
         <section>
@@ -183,7 +195,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 
 // Import the image
@@ -193,4 +205,21 @@ const darkStatus = useDark();
 const toggleDark = useToggle(darkStatus);
 const isOpen = ref(false);
 const modalImageUrl = ref(wkdkLogo);
+const showProfile = ref(true);
+let lastScrollPosition = 0;
+
+const handleScroll = () => {
+  const currentScrollPosition = window.scrollY;
+  showProfile.value =
+    currentScrollPosition < lastScrollPosition || currentScrollPosition < 50;
+  lastScrollPosition = currentScrollPosition;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
