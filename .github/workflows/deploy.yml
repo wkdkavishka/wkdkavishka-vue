@@ -25,7 +25,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git clone --branch=main https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/wkdkavishka/wkdkavishka.git deploy-repo
+          git clone --branch=origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/wkdkavishka/wkdkavishka.git deploy-repo
           rsync -av --delete dist/ deploy-repo/
           cd deploy-repo
           git add .
