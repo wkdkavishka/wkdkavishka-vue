@@ -56,8 +56,6 @@
     <section>
       <div class="mx-auto max-w-7xl py-2">
         <ImageCarousel :list="images" />
-
-        <!-- test image carouselGallery -->
       </div>
     </section>
 
@@ -69,46 +67,20 @@
         <h1
           class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
-          Familiar Technologies
+          Check Out My Work
         </h1>
         <div
-          class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+          class="mx-auto mt-10 grid grid-cols-8 gap-4 sm:grid-cols-12 md:grid-cols-16 lg:grid-cols-20 xl:grid-cols-24 2xl:grid-cols-28"
         >
-          <img
-            alt="Spring"
+          <div
+            v-for="tech in workDoneByMe"
+            :key="tech.name"
             class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            height="48"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1920px-Spring_Framework_Logo_2018.svg.png"
-            width="158"
-          />
-          <img
-            alt="Cassandra"
-            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            height="48"
-            src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg"
-            width="158"
-          />
-          <img
-            alt="Docker"
-            class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            height="48"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1920px-Docker_%28container_engine%29_logo.svg.png"
-            width="158"
-          />
-          <img
-            alt="VueJs"
-            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            height="48"
-            src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
-            width="158"
-          />
-          <img
-            alt="Ionic"
-            class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-            height="48"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/1920px-Ionic-logo-landscape.svg.png"
-            width="158"
-          />
+          >
+            <a :href="tech.link" target="_blank">
+              <img :src="tech.image" :alt="tech.name" height="48" width="80" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -122,9 +94,37 @@
         >
           People I've Worked With
         </h1>
-        <!-- test image carouselGallery -->
-        <!--        <ImageCarouselGallery :list="images" />-->
-        <image-carousel-card-active :list="cards" />
+        <image-carousel-card-active :list="cardsOfPeopleIveWorkedWith" />
+      </div>
+    </section>
+
+    <!-- find me Other -->
+    <section>
+      <div class="mx-auto max-w-7xl py-2 pt-6">
+        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
+        <h1
+          class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
+        >
+          Find Me
+        </h1>
+
+        <div
+          class="mx-auto mt-10 grid grid-cols-4 gap-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 2xl:grid-cols-14"
+        >
+          <div
+            v-for="media in socialMedia"
+            :key="media.name"
+            class="flex justify-center"
+          >
+            <a :href="media.link" target="_blank">
+              <img
+                :src="media.image"
+                :alt="media.name"
+                class="max-h-12 w-auto"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -136,8 +136,6 @@
 import { ref } from "vue";
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
 import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
-
-const isOpen = ref(false);
 
 const _images = [
   { id: 1, url: "../../img/icons/Images/1.png" },
@@ -210,5 +208,53 @@ const _card = [
     linkedin: "linkedin link",
   },
 ];
-const cards = ref(_card);
+const cardsOfPeopleIveWorkedWith = ref(_card);
+
+const workDoneByMe = [
+  {
+    name: "Spring",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1920px-Spring_Framework_Logo_2018.svg.png",
+    link: "https://github.com/yourusername/spring-project",
+  },
+  {
+    name: "Cassandra",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg",
+    link: "https://github.com/yourusername/cassandra-project",
+  },
+  {
+    name: "Docker",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1920px-Docker_%28container_engine%29_logo.svg.png",
+    link: "https://github.com/yourusername/docker-project",
+  },
+  {
+    name: "VueJs",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+    link: "https://github.com/yourusername/vue-project",
+  },
+  {
+    name: "Ionic",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/1920px-Ionic-logo-landscape.svg.png",
+    link: "https://github.com/yourusername/ionic-project",
+  },
+];
+
+const socialMedia = [
+  {
+    name: "Github",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1920px-Octicons-mark-github.svg.png",
+    link: "https://github.com/yourusername",
+  },
+  {
+    name: "Linkedin",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/1920px-LinkedIn_logo_initials.png",
+    link: "https://www.linkedin.com/in/yourusername",
+  },
+];
 </script>
