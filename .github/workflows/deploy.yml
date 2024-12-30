@@ -1,35 +1,35 @@
-name: Deploy to wkdkavishka
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - master # Trigger action on push to the master branch
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the current repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Build your Vue app
-      - name: Install dependencies and build
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" # or the version you are using
+
+      - name: Install dependencies
         run: |
           npm install
+
+      - name: Build Vue.js project
+        run: |
           npm run build
 
-      # Deploy to wkdkavishka repository
-      - name: Deploy to wkdkavishka
-        env:
-          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git clone --branch=origin https://x-access-token:${TOKEN}@github.com/wkdkavishka/wkdkavishka.git deploy-repo
-          rsync -av --delete dist/ deploy-repo/
-          cd deploy-repo
-          git add .
-          git commit -m "Deploy from wkdkavishka-vue [skip ci]" || echo "No changes to commit"
-          git push
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages # Branch where the website will be deployed (GitHub Pages branch)
+          folder: dist # Folder that contains the built files
+          token: ${{ secrets.DEPLOY_TOKEN }} # Use your updated personal access token secret
+          repository-name: wkdkavishka/wkdkavishka # Correct repository format
