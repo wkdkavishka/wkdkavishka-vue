@@ -1,0 +1,33 @@
+name: Deploy to wkdkavishka
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the current repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Build your Vue app
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      # Deploy to wkdkavishka repository
+      - name: Deploy to wkdkavishka
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone --branch=main https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/wkdkavishka/wkdkavishka.git deploy-repo
+          rsync -av --delete dist/ deploy-repo/
+          cd deploy-repo
+          git add .
+          git commit -m "Deploy from wkdkavishka-vue [skip ci]"
+          git push
