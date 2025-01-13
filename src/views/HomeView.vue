@@ -62,7 +62,7 @@
     <!-- familiar technologies -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 pt-6">
-        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
+        <!-- <hr class="my-1 border-blueGray-600 dark:border-slate-500" /> -->
 
         <h1
           class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
@@ -88,7 +88,7 @@
     <!-- testimonials section -->
     <section>
       <div class="mx-auto max-w-7xl py-2 pt-6">
-        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
+        <!-- <hr class="my-1 border-blueGray-600 dark:border-slate-500" /> -->
         <h1
           class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
@@ -99,7 +99,7 @@
     </section>
 
     <!-- find me Other -->
-    <section>
+    <!-- <section>
       <div class="mx-auto max-w-7xl py-2 pt-6">
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
         <h1
@@ -126,7 +126,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- end home view -->
   </div>

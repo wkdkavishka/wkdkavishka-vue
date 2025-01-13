@@ -28,24 +28,42 @@
             >
               <i class="fab fa-twitter"></i>
             </button>
-            <button
-              class="bg-white dark:bg-custom-darker text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
+            <a
+              href="https://web.facebook.com/W.K.D.Kavishka"
+              :target="viewType === 'mobile' ? '_self' : '_blank'"
+              rel="noopener noreferrer"
             >
-              <i class="fab fa-facebook-square"></i>
-            </button>
-            <button
-              class="bg-white dark:bg-custom-darker text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
+              <button
+                class="bg-white dark:bg-custom-darker text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button"
+              >
+                <i class="fab fa-facebook-square"></i>
+              </button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dumindu-kavishka/"
+              :target="viewType === 'mobile' ? '_self' : '_blank'"
+              rel="noopener noreferrer"
             >
-              <i class="fab fa-linkedin"></i>
-            </button>
-            <button
-              class="bg-white dark:bg-custom-darker text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button"
+              <button
+                class="bg-white dark:bg-custom-darker text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button"
+              >
+                <i class="fab fa-linkedin"></i>
+              </button>
+            </a>
+            <a
+              href="https://github.com/wkdkavishka"
+              :target="viewType === 'mobile' ? '_self' : '_blank'"
+              rel="noopener noreferrer"
             >
-              <i class="fab fa-github bg-slate-200 circle"></i>
-            </button>
+              <button
+                class="bg-white dark:bg-custom-darker text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                type="button"
+              >
+                <i class="fab fa-github bg-slate-200 circle"></i>
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -57,7 +75,7 @@
           <div
             class="text-sm text-blueGray-500 dark:text-slate-300 font-semibold py-1"
           >
-            Copyright ©
+            Copyright
             <a
               class="text-blueGray-500 dark:text-slate-300 hover:text-gray-800"
               href=""
@@ -73,7 +91,11 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { inject } from "vue";
+
+const viewType = inject("viewType");
+</script>
 
 <style>
 .circle {
