@@ -1,12 +1,13 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <div
-    class="backdrop-blur-xl bg-teal-900/90 dark:bg-teal-900/70 transition-all duration-300"
+    class="fixed w-full top-0 z-50 backdrop-blur-xl bg-teal-900/90 dark:bg-teal-900/70 transform-gpu transition-all duration-500"
+    :class="{ 'translate-y-0': bigNavBar, '-translate-y-2': !bigNavBar }"
   >
     <div class="container mx-auto px-0 md:px-4">
       <nav
-        :class="{ 'py-1': !bigNavBar, 'py-4': bigNavBar }"
-        class="flex items-center justify-between flex-wrap px-2 transition-all duration-300"
+        :class="{ 'py-1 scale-90': !bigNavBar, 'py-4 scale-100': bigNavBar }"
+        class="flex items-center justify-between flex-wrap px-2 transition-all duration-500 ease-in-out transform-gpu"
       >
         <!-- profile picture and name -->
         <div>
@@ -15,15 +16,18 @@
               <img
                 :src="modalImageUrl"
                 alt="wkdkImage"
-                :class="{ 'w-36 h-36': bigNavBar, 'w-20 h-20': !bigNavBar }"
-                class="mb-3 rounded-full shadow-md transition-all duration-300"
+                :class="{
+                  'w-36 h-36 scale-100': bigNavBar,
+                  'w-20 h-20 scale-95': !bigNavBar,
+                }"
+                class="mb-3 rounded-full shadow-md transition-all duration-500 ease-in-out transform-gpu"
               />
             </div>
             <div
+              class="transition-all duration-500 ease-in-out transform-gpu"
               :class="{
-                'opacity-0 h-0 overflow-hidden transition-all duration-300':
-                  !bigNavBar,
-                'opacity-100 transition-all duration-300': bigNavBar,
+                'opacity-0 scale-95 h-0 overflow-hidden': !bigNavBar,
+                'opacity-100 scale-100': bigNavBar,
               }"
             >
               <div class="flex justify-center">
@@ -112,6 +116,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { useDark } from "@vueuse/core";
+import { useThrottleFn } from "@vueuse/core";
 
 // Import the image
 import wkdkLogo from "@/assets/Images/wkdk-logo.jpg";
@@ -120,10 +125,11 @@ const darkStatus = useDark();
 const modalImageUrl = ref(wkdkLogo);
 const bigNavBar = ref(true);
 
-const handleScroll = () => {
+// Throttled scroll handler for better performance
+const handleScroll = useThrottleFn(() => {
   const currentScrollPosition = window.scrollY;
-  bigNavBar.value = currentScrollPosition < 50; // Will be true only when near the top
-};
+  bigNavBar.value = currentScrollPosition < 50;
+}, 16); // approximately 60fps
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -134,3 +140,14 @@ onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 </script>
+
+<style scoped>
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Optional: Add this if you want to prevent any layout shifts */
+.nav-container {
+  min-height: 4rem; /* Adjust based on your smallest navbar height */
+}
+</style>
