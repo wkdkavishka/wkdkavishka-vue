@@ -20,6 +20,7 @@
 <script setup>
 import NavBar from "./components/MainUse/NavBar.vue";
 import FooterBar from "./components/MainUse/FooterBar.vue";
+import { useHead } from "@vueuse/head";
 
 function resetHoverState() {
   const hoveredElements = document.querySelectorAll(".hovered");
@@ -27,6 +28,65 @@ function resetHoverState() {
     element.classList.remove("hovered");
   });
 }
+
+// SEO Optimization
+useHead({
+  // Default title template
+  title: "Software Developer",
+  titleTemplate: "WKDKavishka | %s",
+
+  // Meta tags
+  meta: [
+    { charset: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      name: "description",
+      content:
+        "WKDKavishka - Software Developer Portfolio showcasing web development projects and skills",
+    },
+    {
+      name: "keywords",
+      content:
+        "Software Developer, Web Development, Vue.js, JavaScript, TypeScript, Portfolio",
+    },
+    { name: "author", content: "WKDKavishka" },
+
+    // Open Graph / Facebook
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://wkdkavishka.com/" },
+    { property: "og:title", content: "WKDKavishka - Software Developer" },
+    {
+      property: "og:description",
+      content:
+        "Software Developer Portfolio showcasing web development projects and skills",
+    },
+    { property: "og:image", content: "/img/og-image.jpg" },
+
+    // Twitter
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:url", content: "https://wkdkavishka.com/" },
+    { name: "twitter:title", content: "WKDKavishka - Software Developer" },
+    {
+      name: "twitter:description",
+      content:
+        "Software Developer Portfolio showcasing web development projects and skills",
+    },
+    { name: "twitter:image", content: "/img/og-image.jpg" },
+
+    // Additional SEO tags
+    { name: "robots", content: "index, follow" },
+    { name: "language", content: "English" },
+    { name: "revisit-after", content: "7 days" },
+    { name: "theme-color", content: "#134E4A" },
+  ],
+
+  // Link tags
+  link: [
+    { rel: "icon", type: "image/png", href: "/img/icons/favicon-32x32.png" },
+    { rel: "apple-touch-icon", href: "/img/icons/apple-touch-icon.png" },
+    { rel: "canonical", href: "https://wkdkavishka.com/" },
+  ],
+});
 </script>
 
 <style>
