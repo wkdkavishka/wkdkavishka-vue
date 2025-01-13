@@ -13,6 +13,17 @@
 
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
 
+        <button id="download">
+          <a
+            class="bg-teal-900/80 text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-1"
+            href="https://mega.nz/file/2BkgnKSI#g21uRHD38bGk5MDTeCbnYqWtcW-0dPOmtqjJnWGOJ2E"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download
+          </a>
+        </button>
+
         <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-slate-300">
           About me write something serious
         </p>
@@ -243,18 +254,18 @@ const workDoneByMe = [
   },
 ];
 
-const socialMedia = [
-  {
-    name: "Github",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1920px-Octicons-mark-github.svg.png",
-    link: "https://github.com/yourusername",
-  },
-  {
-    name: "Linkedin",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/1920px-LinkedIn_logo_initials.png",
-    link: "https://www.linkedin.com/in/yourusername",
-  },
-];
+// const socialMedia = [
+//   {
+//     name: "Github",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1920px-Octicons-mark-github.svg.png",
+//     link: "https://github.com/yourusername",
+//   },
+//   {
+//     name: "Linkedin",
+//     image:
+//       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/1920px-LinkedIn_logo_initials.png",
+//     link: "https://www.linkedin.com/in/yourusername",
+//   },
+// ];
 </script>
