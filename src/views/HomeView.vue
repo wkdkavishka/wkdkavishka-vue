@@ -1,15 +1,15 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 
 <template>
-  <div id="home view" class="container mx-auto px-4 py-4">
+  <div id="home view" class="container mx-auto px-4 py-4 dark:text-white">
     <!-- about me -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
-        <h2
+        <h1
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
         >
           Who Am I
-        </h2>
+        </h1>
 
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
 
@@ -23,9 +23,24 @@
             Download
           </a>
         </button>
+        My resume
 
         <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-slate-300">
-          About me write something serious
+          Undergraduate from
+          <a
+            href="https://ucsc.cmb.ac.lk/"
+            class="text-teal-900 dark:text-teal-700 italic hover:underline"
+          >
+            University of Colombo School of Computing ( UCSC )</a
+          >
+          specializing in software engineering. Ready to utilize learned skills
+          to further a company's mission. Eager to learn new skills and
+          passionate about exploring new technologies, thrive on facing new
+          challenges and developing abilities in a dynamic environment.
+          Proactive team player who loves learning and adapting. With great
+          confidence in abilities and a strong dedication to achieving goals,
+          committed to success and growth. Also looking for something that can
+          strengthen my background.
         </p>
 
         <article
