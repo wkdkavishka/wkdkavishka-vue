@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
 
+permissions:
+  contents: write # 👈 This grants GitHub Actions permission to push changes
+
 jobs:
   update-sitemap:
     runs-on: ubuntu-latest
