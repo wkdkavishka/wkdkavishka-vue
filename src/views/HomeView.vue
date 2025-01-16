@@ -29,7 +29,9 @@
         <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-slate-300">
           Undergraduate from
           <a
+            :target="viewType === 'mobile' ? '_self' : '_blank'"
             href="https://ucsc.cmb.ac.lk/"
+            rel="noopener noreferrer"
             class="text-teal-900 dark:text-teal-700 italic hover:underline"
           >
             University of Colombo School of Computing ( UCSC )</a
@@ -163,6 +165,9 @@
 import { ref } from "vue";
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
 import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
+import { inject } from "vue";
+
+const viewType = inject("viewType");
 
 const _images = [
   { id: 1, url: "../../img/icons/Images/1.png" },
