@@ -1,3 +1,6 @@
+# generate sitemap
+node generate-sitemap.js
+
 npm run build
 this = $(pwd)
 cp -r dist/* "/mnt/Storage-ssd/projects/Personal projects/wkdkavishka.github.io/"
