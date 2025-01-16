@@ -21,7 +21,7 @@
             rel="noopener noreferrer"
             download="W.K.D.Kavishka-Resume.pdf"
           >
-            Download test
+            Download
           </a>
         </button>
         My resume
