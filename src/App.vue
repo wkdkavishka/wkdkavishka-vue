@@ -22,14 +22,17 @@ import NavBar from "./components/MainUse/NavBar.vue";
 import FooterBar from "./components/MainUse/FooterBar.vue";
 import { useHead } from "@vueuse/head";
 import { ref, onMounted, onBeforeUnmount, provide } from "vue";
+import { useDark } from "@vueuse/core";
 
 const viewType = ref("");
+const isDark = useDark();
 
 const updateViewType = () => {
   viewType.value = window.innerWidth < 768 ? "mobile" : "desktop";
 };
 
 onMounted(() => {
+  isDark.value = false;
   updateViewType();
   window.addEventListener("resize", updateViewType);
 });
