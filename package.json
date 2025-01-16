@@ -6,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-wkdkavishka": "./deploy.sh",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "build-wkdkavishka": "./deploy.sh"
   },
   "dependencies": {
     "@capacitor/android": "6.2.0",
