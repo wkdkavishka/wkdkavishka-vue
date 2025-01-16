@@ -16,11 +16,12 @@
         <button id="download">
           <a
             class="bg-teal-900/80 text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-1"
-            href="https://mega.nz/file/2BkgnKSI#g21uRHD38bGk5MDTeCbnYqWtcW-0dPOmtqjJnWGOJ2E"
+            href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            download="W.K.D.Kavishka-Resume.pdf"
           >
-            Download
+            Download Resume
           </a>
         </button>
         My resume
@@ -47,16 +48,16 @@
           class="flex max-w-xl flex-col items-start justify-between py-2"
         >
           <!-- <div class="flex items-center gap-x-4 text-xs">
-                <p class="text-md leading-8 text-gray-600">As of</p>
-                <time datetime="2020-03-16" class="text-gray-500"
-                  >Mar 16, 2024</time
-                >
-                <a
-                  href="#"
-                  class="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                  >Undergraduate</a
-                >
-              </div> -->
+            <p class="text-md leading-8 text-gray-600">As of</p>
+            <time datetime="2020-03-16" class="text-gray-500"
+              >Mar 16, 2024</time
+            >
+            <a
+              href="#"
+              class="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+              >Undergraduate</a
+            >
+          </div> -->
           <div class="group">
             <h3
               class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
