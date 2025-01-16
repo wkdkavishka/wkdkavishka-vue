@@ -1,0 +1,54 @@
+name: Update Sitemap
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
+
+permissions:
+  contents: write # 👈 Grants GitHub Actions permission to push
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure public directory exists
+        run: mkdir -p public
+
+      - name: Generate sitemap.xml
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > public/sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> public/sitemap.xml
+          echo '   <url>' >> public/sitemap.xml
+          echo '      <loc>https://wkdkavishka.com/</loc>' >> public/sitemap.xml
+          echo '      <lastmod>'$(date +%Y-%m-%d)'</lastmod>' >> public/sitemap.xml
+          echo '      <changefreq>weekly</changefreq>' >> public/sitemap.xml
+          echo '      <priority>1.0</priority>' >> public/sitemap.xml
+          echo '   </url>' >> public/sitemap.xml
+          for file in src/views/*.vue; do
+            filename=$(basename "$file" .vue)
+            echo '   <url>' >> public/sitemap.xml
+            echo '      <loc>https://wkdkavishka.com/'$filename'</loc>' >> public/sitemap.xml
+            echo '      <lastmod>'$(date +%Y-%m-%d)'</lastmod>' >> public/sitemap.xml
+            echo '      <changefreq>weekly</changefreq>' >> public/sitemap.xml
+            echo '      <priority>0.8</priority>' >> public/sitemap.xml
+            echo '   </url>' >> public/sitemap.xml
+          done
+          echo '</urlset>' >> public/sitemap.xml
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/sitemap.xml
+          git commit --allow-empty -m "Update sitemap lastmod dates"
+
+      - name: Push changes
+        run: |
+          git push origin ${{ github.ref }}

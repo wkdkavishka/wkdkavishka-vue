@@ -21,13 +21,28 @@
 import NavBar from "./components/MainUse/NavBar.vue";
 import FooterBar from "./components/MainUse/FooterBar.vue";
 import { useHead } from "@vueuse/head";
+import { ref, onMounted, onBeforeUnmount, provide } from "vue";
+import { useDark } from "@vueuse/core";
 
-function resetHoverState() {
-  const hoveredElements = document.querySelectorAll(".hovered");
-  hoveredElements.forEach((element) => {
-    element.classList.remove("hovered");
-  });
-}
+const viewType = ref("");
+const isDark = useDark();
+
+const updateViewType = () => {
+  viewType.value = window.innerWidth < 768 ? "mobile" : "desktop";
+};
+
+onMounted(() => {
+  isDark.value = false;
+  updateViewType();
+  window.addEventListener("resize", updateViewType);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateViewType);
+});
+
+// Provide the `viewType` for child components
+provide("viewType", viewType);
 
 // SEO Optimization
 useHead({
@@ -60,7 +75,7 @@ useHead({
       content:
         "Software Developer Portfolio showcasing web development projects and skills",
     },
-    { property: "og:image", content: "/img/og-image.jpg" },
+    { property: "og:image", content: "/img/icons/Images/wkdk-logo.jpg" },
 
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
@@ -71,7 +86,7 @@ useHead({
       content:
         "Software Developer Portfolio showcasing web development projects and skills",
     },
-    { name: "twitter:image", content: "/img/og-image.jpg" },
+    { name: "twitter:image", content: "/img/icons/Images/wkdk-logo.jpg" },
 
     // Additional SEO tags
     { name: "robots", content: "index, follow" },

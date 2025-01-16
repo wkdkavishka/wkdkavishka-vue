@@ -1,13 +1,13 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <div
-    class="fixed w-full top-0 z-50 backdrop-blur-xl bg-teal-900/90 dark:bg-teal-900/70 transform-gpu transition-all duration-500"
+    class="transition-transform fixed top-0 z-50 w-full transform-gpu bg-teal-900/90 backdrop-blur-xl dark:bg-teal-900/70"
     :class="{ 'translate-y-0': bigNavBar, '-translate-y-2': !bigNavBar }"
   >
     <div class="container mx-auto px-0 md:px-4">
       <nav
-        :class="{ 'py-1 scale-90': !bigNavBar, 'py-4 scale-100': bigNavBar }"
-        class="flex items-center justify-between flex-wrap px-2 transition-all duration-500 ease-in-out transform-gpu"
+        :class="{ 'scale-90 py-1': !bigNavBar, 'scale-100 py-4': bigNavBar }"
+        class="flex transform-gpu flex-wrap items-center justify-between px-2 transition-all duration-500 ease-in-out"
       >
         <!-- profile picture and name -->
         <div>
@@ -17,17 +17,17 @@
                 :src="modalImageUrl"
                 alt="wkdkImage"
                 :class="{
-                  'w-36 h-36 scale-100': bigNavBar,
-                  'w-20 h-20 scale-95': !bigNavBar,
+                  'h-36 w-36 scale-100': bigNavBar,
+                  'h-20 w-20 scale-95': !bigNavBar,
                 }"
-                class="mb-3 rounded-full shadow-md transition-all duration-500 ease-in-out transform-gpu"
+                class="mb-3 transform-gpu rounded-full shadow-md transition-all duration-500 ease-in-out"
               />
             </div>
             <div
-              class="transition-all duration-500 ease-in-out transform-gpu"
+              class="transform-gpu transition-all duration-500 ease-in-out"
               :class="{
-                'opacity-0 scale-95 h-0 overflow-hidden': !bigNavBar,
-                'opacity-100 scale-100': bigNavBar,
+                'h-0 scale-95 overflow-hidden opacity-0': !bigNavBar,
+                'scale-100 opacity-100': bigNavBar,
               }"
             >
               <div class="flex justify-center">
@@ -38,15 +38,6 @@
               <div class="flex justify-center">
                 <span class="text-sm text-slate-300">Software Enginear</span>
               </div>
-              <!-- <div id="download" class="flex justify-center" type="button">
-                <a
-                  class="text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white md:block md:flex-auto my-1"
-                  href="https://mega.nz/file/2BkgnKSI#g21uRHD38bGk5MDTeCbnYqWtcW-0dPOmtqjJnWGOJ2E"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Download</a
-                >
-              </div> -->
             </div>
           </div>
         </div>
@@ -55,25 +46,25 @@
         <section>
           <div
             id="menu"
-            class="flex-auto flex-wrap px-4 md:flex md:items-center md:w-auto"
+            class="flex-auto flex-wrap px-4 md:flex md:w-auto md:items-center"
             name="menu"
           >
-            <div class="text-sm block md:flex justify-between">
+            <div class="block justify-between text-sm md:flex">
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
-                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/"
                 >Home
               </RouterLink>
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
-                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/gallery"
                 >Gallery
               </RouterLink>
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
-                class="block py-2 px-2 mr-2 md:inline-block md:mt-0 text-teal-200 hover:text-white hover:bg-white/30 dark:hover:bg-black/30 hover:backdrop-blur-xl rounded"
+                class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/contactme"
                 >Contace Me
               </RouterLink>
@@ -85,10 +76,10 @@
         <section>
           <button
             aria-label="Toggle dark mode"
-            class="text-sm px-3 py-2 leading-none border rounded text-white hover:border-transparent hover:text-teal-500 hover:bg-white my-1 inline-flex items-center"
+            class="my-1 inline-flex items-center rounded border px-3 py-2 text-sm leading-none text-white hover:border-transparent hover:bg-white hover:text-teal-500"
             @click="darkStatus = !darkStatus"
           >
-            <span class="hidden sm:block mr-2">{{
+            <span class="mr-2 hidden sm:block">{{
               darkStatus ? "Dark" : "Light"
             }}</span>
             <svg
