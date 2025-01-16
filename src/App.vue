@@ -75,7 +75,7 @@ useHead({
       content:
         "Software Developer Portfolio showcasing web development projects and skills",
     },
-    { property: "og:image", content: "/img/og-image.jpg" },
+    { property: "og:image", content: "/img/icons/Images/wkdk-logo.jpg" },
 
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
@@ -86,7 +86,7 @@ useHead({
       content:
         "Software Developer Portfolio showcasing web development projects and skills",
     },
-    { name: "twitter:image", content: "/img/og-image.jpg" },
+    { name: "twitter:image", content: "/img/icons/Images/wkdk-logo.jpg" },
 
     // Additional SEO tags
     { name: "robots", content: "index, follow" },

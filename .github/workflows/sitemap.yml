@@ -1,0 +1,35 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - dev # Change this to your main branch if needed
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
+
+jobs:
+  generate_sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Generate Sitemap
+        run: npm run generate-sitemap
+
+      - name: Commit and Push Sitemap
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add public/sitemap.xml
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Auto-update sitemap"
+          git push
