@@ -14,7 +14,7 @@
           <div class="flex-col items-center text-white">
             <div class="flex justify-center">
               <img
-                :src="modalImageUrl"
+                src="/img/Images/wkdk-logo.webp"
                 alt="wkdkImage"
                 :class="{
                   'h-36 w-36 scale-100': bigNavBar,
@@ -109,11 +109,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { useDark } from "@vueuse/core";
 import { useThrottleFn } from "@vueuse/core";
 
-// Import the image
-import wkdkLogo from "@/assets/Images/wkdk-logo.jpg";
-
 const darkStatus = useDark();
-const modalImageUrl = ref(wkdkLogo);
 const bigNavBar = ref(true);
 
 // Throttled scroll handler for better performance
