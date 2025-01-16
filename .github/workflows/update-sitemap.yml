@@ -9,7 +9,7 @@ on:
     - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
 
 permissions:
-  contents: write # 👈 This grants GitHub Actions permission to push changes
+  contents: write # 👈 Grants GitHub Actions permission to push
 
 jobs:
   update-sitemap:
@@ -50,7 +50,5 @@ jobs:
           git commit --allow-empty -m "Update sitemap lastmod dates"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+        run: |
+          git push origin ${{ github.ref }}
