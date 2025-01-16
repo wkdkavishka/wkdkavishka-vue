@@ -27,7 +27,7 @@
         My resume
 
         <p class="mt-2 text-lg leading-8 text-gray-600 dark:text-slate-300">
-          Undergraduate from
+          Undergraduate in Software Engineering from
           <a
             :target="viewType === 'mobile' ? '_self' : '_blank'"
             href="https://ucsc.cmb.ac.lk/"
@@ -42,8 +42,8 @@
           challenges and developing abilities in a dynamic environment.
           Proactive team player who loves learning and adapting. With great
           confidence in abilities and a strong dedication to achieving goals,
-          committed to success and growth. Also looking for something that can
-          strengthen my background.
+          committed to success and growth. Also looking for opportunities that
+          can strengthen my background in software development and technology.
         </p>
 
         <article
