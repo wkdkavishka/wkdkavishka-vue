@@ -54,13 +54,13 @@
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/"
-                >Home
+                >Abot Me
               </RouterLink>
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/gallery"
-                >Gallery
+                >My Gallery
               </RouterLink>
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
