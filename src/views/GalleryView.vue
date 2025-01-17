@@ -39,15 +39,15 @@ import ImageCarouselGallery from "@/components/Small/carousel/ImageCarouselGalle
 import { ref } from "vue";
 
 const _images = [
-  { id: 1, url: "../../img/icons/Images/1.png" },
-  { id: 2, url: "../../img/icons/Images/2.png" },
-  { id: 3, url: "../../img/icons/Images/3.png" },
-  { id: 4, url: "../../img/icons/Images/4.png" },
-  { id: 5, url: "../../img/icons/Images/5.png" },
-  { id: 6, url: "../../img/icons/Images/6.png" },
-  { id: 7, url: "../../img/icons/Images/7.png" },
-  { id: 8, url: "../../img/icons/Images/8.png" },
-  { id: 9, url: "../../img/icons/Images/9.png" },
+  { id: 1, url: "/img/Images/1.webp" },
+  { id: 2, url: "/img/Images/1.webp" },
+  { id: 3, url: "/img/Images/1.webp" },
+  { id: 4, url: "/img/Images/1.webp" },
+  { id: 5, url: "/img/Images/1.webp" },
+  { id: 6, url: "/img/Images/1.webp" },
+  { id: 7, url: "/img/Images/1.webp" },
+  { id: 8, url: "/img/Images/1.webp" },
+  { id: 9, url: "/img/Images/1.webp" },
 ];
 const images = ref(_images);
 </script>
