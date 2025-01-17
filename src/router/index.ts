@@ -1,18 +1,20 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import ContactMe from "@/views/ContactMeView.vue";
 import GalleryView from "@/views/GalleryView.vue";
+import AboutView from "@/views/AboutView.vue";
+import NotFound from "@/views/NotFound.vue"; // Modified import statement for NotFound component
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "About",
+    component: AboutView,
     meta: {
-      title: "Home",
+      title: "About Me",
       description:
         "Welcome to WKDKavishka's Portfolio - Full Stack Developer showcasing web development expertise",
-      keywords: "Home, Portfolio, Full Stack Developer, Web Development",
+      keywords:
+        "Home, Portfolio, Full Stack Developer, Web Development,wkdkavishka, Dumindu Kavishka, wkdka",
     },
   },
   {
@@ -23,7 +25,8 @@ const routes: Array<RouteRecordRaw> = [
       title: "Contact Me",
       description:
         "Get in touch with WKDKavishka - Full Stack Developer for collaboration and opportunities",
-      keywords: "Contact, Full Stack Developer, Hire Developer, Collaboration",
+      keywords:
+        "Contact, Full Stack Developer, Hire Developer, Collaboration, wkdkavishka, Dumindu Kavishka, wkdka",
     },
   },
   {
@@ -34,14 +37,25 @@ const routes: Array<RouteRecordRaw> = [
       title: "Gallery",
       description:
         "Explore WKDKavishka's project gallery - Showcasing web development projects and achievements",
-      keywords: "Gallery, Projects, Portfolio, Web Development, Full Stack",
+      keywords:
+        "Gallery, Projects, Portfolio, Web Development, Full Stack,wkdkavishka, Dumindu Kavishka, wkdka",
     },
   },
+  {
+    path: "/:pathMatch(.*)*",
+    component: NotFound,
+    meta: {
+      title: "404 Not Found",
+      description: "The page you are looking for does not exist.",
+      keywords:
+        "404, Not Found, Error, Page Not Found, wkdkavishka, Dumindu Kavishka, wkdka",
+    },
+  }, // Added catch-all route for unmatched paths
 ];
 
 const router = createRouter({
-  // history: createWebHashHistory(),
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
+  // history: createWebHistory(),
   routes,
   linkExactActiveClass: "!text-yellow-500 dark:!text-yellow-500",
 });

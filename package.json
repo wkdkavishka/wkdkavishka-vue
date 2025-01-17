@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-wkdkavishka": "./deploy.sh"
+    "build-wkdkavishka": "./deploy.sh",
+    "serve-production": "vue-cli-service build && npx http-server dist"
   },
   "dependencies": {
     "@capacitor/android": "6.2.0",
@@ -48,6 +49,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
+    "http-server": "^14.1.1",
     "lint-staged": "^11.1.2",
     "postcss": "^8.4.38",
     "prettier": "^2.4.1",
