@@ -12,7 +12,7 @@
 
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
       </div>
-      <div class="mx-auto max-w-7xl py-2">
+      <div class="mx-auto py-2 max-w-4xl">
         <ImageCarouselGallery :list="images" />
       </div>
     </section>
@@ -28,7 +28,7 @@
 
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
       </div>
-      <div class="mx-auto max-w-7xl py-2">
+      <div class="mx-auto max-w-4xl py-2">
         <ImageCarouselGallery :list="images" />
       </div>
     </section>

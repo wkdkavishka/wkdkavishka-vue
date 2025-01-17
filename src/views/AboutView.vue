@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 
 <template>
-  <div id="home view" class="container mx-auto px-4 py-4 dark:text-white">
+  <div id="about view" class="container mx-auto px-4 py-4 dark:text-white">
     <!-- about me -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
@@ -15,7 +15,7 @@
 
         <button id="download">
           <a
-            class="bg-teal-900/80 text-center block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white my-1"
+            class="custom-button my-1"
             href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
