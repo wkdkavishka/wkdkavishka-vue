@@ -14,7 +14,7 @@
           <div class="flex-col items-center text-white">
             <div class="flex justify-center">
               <img
-                src="/img/Images/wkdk-logo.webp"
+                v-lazy="'/img/Images/wkdk-logo.webp'"
                 alt="wkdkImage"
                 :class="{
                   'h-36 w-36 scale-100': bigNavBar,
@@ -56,12 +56,12 @@
                 to="/"
                 >Abot Me
               </RouterLink>
-              <RouterLink
+              <!-- <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"
                 to="/gallery"
                 >My Gallery
-              </RouterLink>
+              </RouterLink> -->
               <RouterLink
                 active-class="bg-white/30 dark:bg-black/30 backdrop-blur-xl"
                 class="mr-2 block rounded px-2 py-2 text-teal-200 hover:bg-white/30 hover:text-white hover:backdrop-blur-xl dark:hover:bg-black/30 md:mt-0 md:inline-block"

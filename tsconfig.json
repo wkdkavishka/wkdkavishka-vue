@@ -35,7 +35,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/views/GalleryView.vue.old.xxx"  ],
   "exclude": [
     "node_modules"
   ]

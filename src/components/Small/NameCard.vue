@@ -7,8 +7,8 @@
       <div class="w-full flex justify-center mt-2">
         <div class="h-32 w-32">
           <img
-            :src="image"
-            alt="Display Picture of Andres Berlin"
+            v-lazy="image"
+            :alt="alt"
             class="rounded-full object-cover h-full w-full shadow-md"
             role="img"
           />
@@ -107,6 +107,7 @@ const props = defineProps({
     default: "@/assets/images/dk-logo.jpg",
     required: true,
   },
+  alt: { type: String, default: "alt", required: true },
   description: { type: String, default: "Some description", required: true },
 });
 </script>

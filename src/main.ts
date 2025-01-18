@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import VueLazyload from "vue-lazyload";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
@@ -8,4 +9,13 @@ require("@/assets/CSS/style.css");
 
 const head = createHead();
 
-createApp(App).use(head).use(router).mount("#app");
+createApp(App)
+  .use(head)
+  .use(router)
+  .use(VueLazyload, {
+    preLoad: 1.3,
+    error: "/img/icons/Images/error.gif",
+    loading: "/img/icons/Images/loader.gif",
+    attempt: 1,
+  })
+  .mount("#app");

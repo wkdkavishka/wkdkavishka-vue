@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import ContactMe from "@/views/ContactMeView.vue";
-import GalleryView from "@/views/GalleryView.vue";
+// import GalleryView from "@/views/GalleryView.vue";
 import AboutView from "@/views/AboutView.vue";
 import NotFound from "@/views/NotFound.vue"; // Modified import statement for NotFound component
 
@@ -29,18 +29,18 @@ const routes: Array<RouteRecordRaw> = [
         "Contact, Full Stack Developer, Hire Developer, Collaboration, wkdkavishka, Dumindu Kavishka, wkdka",
     },
   },
-  {
-    path: "/gallery",
-    name: "gallery",
-    component: GalleryView,
-    meta: {
-      title: "Gallery",
-      description:
-        "Explore WKDKavishka's project gallery - Showcasing web development projects and achievements",
-      keywords:
-        "Gallery, Projects, Portfolio, Web Development, Full Stack,wkdkavishka, Dumindu Kavishka, wkdka",
-    },
-  },
+  // {
+  //   path: "/gallery",
+  //   name: "gallery",
+  //   component: GalleryView,
+  //   meta: {
+  //     title: "Gallery",
+  //     description:
+  //       "Explore WKDKavishka's project gallery - Showcasing web development projects and achievements",
+  //     keywords:
+  //       "Gallery, Projects, Portfolio, Web Development, Full Stack,wkdkavishka, Dumindu Kavishka, wkdka",
+  //   },
+  // },
   {
     path: "/:pathMatch(.*)*",
     component: NotFound,
