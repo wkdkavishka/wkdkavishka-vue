@@ -25,7 +25,7 @@
     :items-to-show="4.5"
     :transition="500"
     :wrap-around="true"
-    autoplay="2000"
+    :autoplay="autoplay"
     snap-align="center"
   >
     <Slide v-for="item in list" :key="item.id">

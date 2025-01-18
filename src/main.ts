@@ -14,8 +14,8 @@ createApp(App)
   .use(router)
   .use(VueLazyload, {
     preLoad: 1.3,
-    error: "/img/icons/Images/error.gif",
-    loading: "/img/icons/Images/loader.gif",
+    error: "./img/icons/Images/error.gif",
+    loading: "./img/Images/loading.gif",
     attempt: 1,
   })
   .mount("#app");

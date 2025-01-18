@@ -12,7 +12,7 @@
       >
         X
       </button>
-      <img :alt="imageUrl" :src="imageUrl" class="model-image" />
+      <img v-lazy="imageUrl" :alt="imageUrl" class="model-image" />
     </div>
   </div>
 </template>
