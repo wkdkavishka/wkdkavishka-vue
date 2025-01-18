@@ -1,37 +1,39 @@
 <template>
   <div id="home view" class="container mx-auto px-4 py-4">
-    <!--  Gallery view  -->
-    <!--  industrial achievements  -->
-    <section>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
-        <h2
-          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
-        >
-          Industrial Achievements
-        </h2>
+    <div class="fleax justify-around">
+      <!--  Gallery view  -->
+      <!--  industrial achievements  -->
+      <section>
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 py-2">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
+          >
+            Industrial Achievements
+          </h2>
 
-        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
-      </div>
-      <div class="mx-auto py-2 max-w-4xl">
-        <ImageCarouselGallery :list="images" />
-      </div>
-    </section>
+          <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
+        </div>
+        <div class="mx-auto py-2 max-w-4xl">
+          <ImageCarouselGallery :list="images" />
+        </div>
+      </section>
 
-    <!--  educational achievements  -->
-    <section>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
-        <h2
-          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
-        >
-          Educational Achievements
-        </h2>
+      <!--  educational achievements  -->
+      <section>
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 py-2">
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
+          >
+            Educational Achievements
+          </h2>
 
-        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
-      </div>
-      <div class="mx-auto max-w-4xl py-2">
-        <ImageCarouselGallery :list="images" />
-      </div>
-    </section>
+          <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
+        </div>
+        <div class="mx-auto max-w-4xl py-2">
+          <ImageCarouselGallery :list="images" />
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>

@@ -12,6 +12,7 @@
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
         <NameCard
+          :alt="item.alt"
           :description="item.description"
           :git="item.git"
           :image="item.image"
@@ -29,6 +30,7 @@
     </template>
   </Carousel>
   <CardModal
+    :alt="currentItem.alt"
     :description="currentItem.description"
     :git="currentItem.git"
     :image="currentItem.image"

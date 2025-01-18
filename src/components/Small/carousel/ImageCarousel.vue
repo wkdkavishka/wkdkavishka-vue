@@ -13,8 +13,8 @@
     <Slide v-for="item in list" :key="item.id">
       <div class="carousel__slide" @click="slideTo(item.id - 1)">
         <img
+          v-lazy="item.url"
           :alt="item.url"
-          :src="item.url"
           class="object-cover h-auto w-80"
           @click.stop="viewFull(item.url)"
         />

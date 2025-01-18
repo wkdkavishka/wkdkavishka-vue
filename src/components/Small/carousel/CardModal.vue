@@ -10,6 +10,7 @@
         :description="description"
         :git="git"
         :image="image"
+        :alt="alt"
         :linkedin="linkedin"
         :name="name"
         :title="title"
@@ -58,6 +59,11 @@ const props = defineProps({
     type: String,
     required: true,
     default: "@/assets/images/dk-logo.jpg",
+  },
+  alt: {
+    type: String,
+    required: true,
+    default: "alt",
   },
   description: {
     type: String,

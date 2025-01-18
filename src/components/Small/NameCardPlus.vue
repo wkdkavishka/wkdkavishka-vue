@@ -8,7 +8,7 @@
         <div class="h-52 sm:h-64 w-52 sm:w-64">
           <img
             :src="image"
-            alt="Display Picture of Andres Berlin"
+            :alt="alt"
             class="rounded-full object-cover h-full w-full shadow-md"
             role="img"
           />
@@ -106,6 +106,7 @@ const props = defineProps({
     default: "@/assets/images/dk-logo.jpg",
     required: true,
   },
+  alt: { type: String, default: "alt", required: true },
   description: { type: String, default: "Some description", required: true },
 });
 </script>
