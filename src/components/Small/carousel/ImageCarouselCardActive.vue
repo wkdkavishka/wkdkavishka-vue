@@ -5,7 +5,7 @@
     :items-to-show="itemsToShow"
     :transition="500"
     :wrap-around="true"
-    autoplay="2000"
+    :autoplay="2000"
     pause-autoplay-on-hover
     snap-align="center"
   >
