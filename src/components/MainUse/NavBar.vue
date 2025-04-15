@@ -14,7 +14,7 @@
           <div class="flex-col items-center text-white">
             <div class="flex justify-center">
               <img
-                v-lazy="'/img/Images/wkdk-logo.webp'"
+                v-lazy="'img/Images/wkdk-logo.webp'"
                 alt="wkdkImage"
                 :class="{
                   'h-36 w-36 scale-100': bigNavBar,
@@ -105,9 +105,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
-import { useDark } from "@vueuse/core";
-import { useThrottleFn } from "@vueuse/core";
+import { useDark, useThrottleFn } from "@vueuse/core";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const darkStatus = useDark();
 const bigNavBar = ref(true);

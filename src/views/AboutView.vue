@@ -162,23 +162,22 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
 import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
-import { inject } from "vue";
+import { inject, ref } from "vue";
 
 const viewType = inject("viewType");
 
 const _images = [
-  { id: 1, url: "/img/Images/1.webp" },
-  { id: 2, url: "/img/Images/1.webp" },
-  { id: 3, url: "/img/Images/1.webp" },
-  { id: 4, url: "/img/Images/1.webp" },
-  { id: 5, url: "/img/Images/1.webp" },
-  { id: 6, url: "/img/Images/1.webp" },
-  { id: 7, url: "/img/Images/1.webp" },
-  { id: 8, url: "/img/Images/1.webp" },
-  { id: 9, url: "/img/Images/1.webp" },
+  { id: 1, url: "img/Images/1.webp" },
+  { id: 2, url: "img/Images/1.webp" },
+  { id: 3, url: "img/Images/1.webp" },
+  { id: 4, url: "img/Images/1.webp" },
+  { id: 5, url: "img/Images/1.webp" },
+  { id: 6, url: "img/Images/1.webp" },
+  { id: 7, url: "img/Images/1.webp" },
+  { id: 8, url: "img/Images/1.webp" },
+  { id: 9, url: "img/Images/1.webp" },
 ];
 const images = ref(_images);
 
