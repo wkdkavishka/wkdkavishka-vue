@@ -1,5 +1,9 @@
 {
   "name": "wkdkavishka-vue",
+  "author": {
+    "name": "Kavishka",
+    "email": "w.k.d.kavishka@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "main": "electron/main.js",
@@ -90,5 +94,25 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
+  },
+  "build": {
+    "appId": "com.yourdomain.wkdkavishka",
+    "productName": "Wkdkavishka Vue",
+    "linux": {
+      "target": [
+        "rpm",
+        "deb",
+        "AppImage"
+      ],
+      "category": "Utility"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    }
   }
 }
