@@ -7,6 +7,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "electron/main.js",
+  "description": "WKDKavishka - Software Developer Portfolio built with Vue and Electron.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -35,6 +36,7 @@
     "@vueuse/head": "^2.0.0",
     "core-js": "^3.8.3",
     "register-service-worker": "^1.7.2",
+    "sharp": "^0.34.1",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-lazyload": "^3.0.0",
@@ -96,16 +98,19 @@
     "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
   },
   "build": {
-    "appId": "com.yourdomain.wkdkavishka",
-    "productName": "Wkdkavishka Vue",
+    "appId": "com.wkdkavishka",
+    "productName": "Wkdkavishka-Vue",
     "linux": {
+      "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
-        "rpm",
         "deb",
         "AppImage"
       ],
       "category": "Utility"
     },
+    "asarUnpack": [
+      "**/node_modules/sharp/**/*"
+    ],
     "files": [
       "dist/**/*",
       "electron/**/*",
