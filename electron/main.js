@@ -24,7 +24,7 @@ function createWindow() {
     });
   }
 
-  win.webContents.openDevTools(); // For development, remove in production
+  // win.webContents.openDevTools(); // For development, remove in production
 }
 
 app.whenReady().then(createWindow);
