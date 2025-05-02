@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-import NavBar from "./components/MainUse/NavBar.vue";
-import FooterBar from "./components/MainUse/FooterBar.vue";
+import NavBar from "./components/Large/NavBar.vue";
+import FooterBar from "./components/Large/FooterBar.vue";
 // import { useHead } from "@vueuse/head";
 import { ref, onMounted, onBeforeUnmount, provide } from "vue";
 import { useDark } from "@vueuse/core";
