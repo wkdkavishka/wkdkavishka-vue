@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install -y build-essential python3 g++ make libvips-dev fakeroot rpm libfuse2 wget gnupg2 software-properties-common
           sudo dpkg --add-architecture i386
           sudo mkdir -pm755 /etc/apt/keyrings
-          wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+          wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key
           echo "deb [signed-by=/etc/apt/keyrings/winehq-archive.key] https://dl.winehq.org/wine-builds/ubuntu/ jammy main" | sudo tee /etc/apt/sources.list.d/winehq.list
           sudo apt-get update
           sudo apt-get install -y --install-recommends winehq-stable
