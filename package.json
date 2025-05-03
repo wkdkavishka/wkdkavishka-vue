@@ -104,8 +104,7 @@
       "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
         "AppImage",
-        "deb",
-        "rpm"
+        "deb"
       ],
       "category": "Utility"
     },
