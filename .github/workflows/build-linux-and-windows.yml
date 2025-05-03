@@ -40,7 +40,21 @@ jobs:
         run: npm run build
 
       - name: Build Electron app (Linux & Windows)
-        run: npx electron-builder --linux --win
+        run: |
+          echo "========== ENVIRONMENT =========="
+          env
+          echo "========== NODE VERSION ========="
+          node --version
+          echo "========== NPM VERSION =========="
+          npm --version
+          echo "========== ELECTRON-BUILDER VERSION =========="
+          npx electron-builder --version
+          echo "========== DIST DIRECTORY BEFORE BUILD =========="
+          ls -lh dist || true
+          echo "========== STARTING ELECTRON-BUILDER =========="
+          DEBUG=electron-builder npx electron-builder --linux --win
+          echo "========== DIST DIRECTORY AFTER BUILD =========="
+          ls -lh dist || true
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
