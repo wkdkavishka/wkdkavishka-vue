@@ -11,10 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -25,32 +22,29 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install system dependencies
-        if: runner.os == 'Linux'
+      - name: Install compile dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential python3 g++ make libvips-dev fakeroot rpm libfuse2
+          sudo apt-get install -y build-essential python3 g++ make libvips-dev fakeroot rpm libfuse2 wget gnupg2 software-properties-common
+          sudo mkdir -pm755 /etc/apt/keyrings
+          wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+          sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ jammy main'
+          sudo apt-get update
+          sudo apt-get install -y --install-recommends winehq-stable
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Build app
         run: npm run build
 
-      - name: Build Electron app
-        run: |
-          if [[ "$RUNNER_OS" == "Linux" ]]; then
-            npx electron-builder --linux
-          elif [[ "$RUNNER_OS" == "Windows" ]]; then
-            npx electron-builder --win
-          elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            npx electron-builder --mac
-          fi
+      - name: Build Electron app (Linux & Windows)
+        run: npx electron-builder --linux --win
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ runner.os }}-artifacts
+          name: build-artifacts
           path: dist/*
 
   release:
