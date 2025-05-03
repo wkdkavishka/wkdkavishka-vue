@@ -52,7 +52,7 @@ jobs:
           echo "========== DIST DIRECTORY BEFORE BUILD =========="
           ls -lh dist || true
           echo "========== STARTING ELECTRON-BUILDER =========="
-          DEBUG=electron-builder npx electron-builder --linux --win
+          DEBUG=electron-builder npx electron-builder --linux
           echo "========== DIST DIRECTORY AFTER BUILD =========="
           ls -lh dist || true
 
@@ -76,4 +76,4 @@ jobs:
         with:
           files: artifacts/**/*.*
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

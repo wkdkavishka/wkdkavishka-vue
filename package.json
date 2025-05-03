@@ -111,6 +111,7 @@
       "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
         "nsis",
+        "msi",
         "portable"
       ]
     },
