@@ -103,9 +103,18 @@
     "linux": {
       "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
-        "AppImage"
+        "AppImage",
+        "deb",
+        "rpm"
       ],
       "category": "Utility"
+    },
+    "win": {
+      "icon": "public/img/icons/android-chrome-512x512.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "asarUnpack": [
       "**/node_modules/sharp/**/*"
