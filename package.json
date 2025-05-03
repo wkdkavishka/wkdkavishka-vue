@@ -103,7 +103,6 @@
     "linux": {
       "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
-        "deb",
         "AppImage"
       ],
       "category": "Utility"
