@@ -15,7 +15,7 @@
     "build-wkdkavishka": "./deploy.sh",
     "serve-production": "vue-cli-service build && npx http-server dist",
     "electron:dev": "vue-cli-service build && electron .",
-    "electron:build": "npm run build && electron-builder --linux --win",
+    "electron:build": "DEBUG=electron-builder* npx electron-builder --win --linux --x64",
     "package": "npm run electron:build"
   },
   "dependencies": {
@@ -60,13 +60,13 @@
     "electron": "^34.1.0",
     "electron-builder": "^25.1.8",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.0.3",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^8.7.1",
     "http-server": "^14.1.1",
     "lint-staged": "^11.1.2",
     "postcss": "^8.4.38",
-    "prettier": "^2.4.1",
+    "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1",
     "typescript": "~4.5.5"
   },
@@ -118,7 +118,6 @@
       "**/node_modules/sharp/**/*"
     ],
     "files": [
-      "dist/**/*",
       "electron/**/*",
       "package.json"
     ],
