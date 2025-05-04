@@ -64,34 +64,19 @@
             <h3
               class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
             >
-              <a href="#">
-                <span
-                  class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-100"
-                  >My Projects
-                </span>
-              </a>
+              <span
+                class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-100"
+                >Services I Offer
+              </span>
             </h3>
-            <p
-              class="py-1 line-clamp-3 text-md leading-6 text-gray-600 dark:text-slate-300"
-            >
-              check on
-              <a
-                href="https://github.com/wkdkavishka?tab=repositories"
-                :target="viewType === 'mobile' ? '_self' : '_blank'"
-                rel="noopener noreferrer"
-              >
-                github
-              </a>
-            </p>
           </div>
         </article>
       </div>
     </section>
 
-    <!--  work done title  -->
     <section>
-      <div class="mx-auto max-w-7xl py-2">
-        <ImageCarousel :list="projects" />
+      <div class="mx-auto max-w-7xl">
+        <ImageCarousel :list="servicesIProvide" />
       </div>
     </section>
 
@@ -103,15 +88,13 @@
         <h1
           class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
         >
-          Check Out My Work
+          CheckOut My Work
         </h1>
-        <div
-          class="mx-auto mt-10 grid grid-cols-8 gap-4 sm:grid-cols-12 md:grid-cols-16 lg:grid-cols-20 xl:grid-cols-24 2xl:grid-cols-28"
-        >
+        <div class="mx-auto mt-10 flex flex-wrap justify-center gap-4">
           <div
             v-for="tech in workDoneByMe"
             :key="tech.name"
-            class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+            class="flex-shrink-0 flex-grow-0 basis-36 max-h-12 w-full sm:w-36 md:w-40 lg:w-44 xl:w-48 2xl:w-52 flex items-center justify-center"
           >
             <a :href="tech.link" target="_blank">
               <img :src="tech.image" :alt="tech.name" height="48" width="80" />
@@ -149,7 +132,7 @@ import env from "../../env.json";
 const viewType = inject("viewType");
 const graduateState = ref("Undergraduate");
 
-const projects = ref(env.projects);
+const servicesIProvide = ref(env.servicesIProvide);
 
 const PeopleIveWorkedWith = ref(env.PeopleIveWorkedWith);
 
