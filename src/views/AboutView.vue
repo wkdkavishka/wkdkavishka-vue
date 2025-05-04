@@ -91,7 +91,7 @@
     <!--  work done title  -->
     <section>
       <div class="mx-auto max-w-7xl py-2">
-        <ImageCarousel :list="images" />
+        <ImageCarousel :list="projects" />
       </div>
     </section>
 
@@ -131,39 +131,10 @@
         >
           People I've Worked With
         </h1>
-        <image-carousel-card-active :list="cardsOfPeopleIveWorkedWith" />
+        <image-carousel-card-active :list="PeopleIveWorkedWith" />
       </div>
     </section>
     <!-- end testimonials section -->
-    <!-- find me section -->
-    <!-- <section>
-      <div class="mx-auto max-w-7xl py-2 pt-6">
-        <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
-        <h1
-          class="font-bold text-3xl text-center text-gray-800 dark:text-slate-100 pb-6 sm:w-4/6 w-5/6 mx-auto pt-4"
-        >
-          Find Me
-        </h1>
-
-        <div
-          class="mx-auto mt-10 grid grid-cols-4 gap-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 2xl:grid-cols-14"
-        >
-          <div
-            v-for="media in socialMedia"
-            :key="media.name"
-            class="flex justify-center"
-          >
-            <a :href="media.link" target="_blank">
-              <img
-                :src="media.image"
-                :alt="media.name"
-                class="max-h-12 w-auto"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
     <!-- end home view -->
   </div>
@@ -173,134 +144,14 @@
 import ImageCarousel from "@/components/Small/carousel/ImageCarousel.vue";
 import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCardActive.vue";
 import { inject, ref } from "vue";
+import env from "../../env.json";
 
 const viewType = inject("viewType");
 const graduateState = ref("Undergraduate");
 
-const _images = [
-  { id: 1, url: "img/Images/repo.webp" },
-  { id: 2, url: "img/Images/repo.webp" },
-  { id: 3, url: "img/Images/repo.webp" },
-  { id: 4, url: "img/Images/repo.webp" },
-  { id: 5, url: "img/Images/repo.webp" },
-  { id: 6, url: "img/Images/repo.webp" },
-  { id: 7, url: "img/Images/repo.webp" },
-  { id: 8, url: "img/Images/repo.webp" },
-  { id: 9, url: "img/Images/repo.webp" },
-];
-const images = ref(_images);
+const projects = ref(env.projects);
 
-const _card = [
-  {
-    id: 1,
-    name: "name 1",
-    title: "title 1",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 1",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-    description:
-      "test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test ",
-  },
-  {
-    id: 2,
-    name: "name 2",
-    title: "title 2",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 2",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-  },
-  {
-    id: 3,
-    name: "name 3",
-    title: "title 3",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 3",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-  },
-  {
-    id: 4,
-    name: "name 4",
-    title: "title 4",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 4",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-  },
-  {
-    id: 5,
-    name: "name 5",
-    title: "title 5",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 5",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-  },
-  {
-    id: 6,
-    name: "name 6",
-    title: "title 6",
-    image: "img/Images/cards/card.webp",
-    alt: "Image for name 6",
-    git: "git link",
-    x: "x link",
-    linkedin: "linkedin link",
-  },
-];
-const cardsOfPeopleIveWorkedWith = ref(_card);
+const PeopleIveWorkedWith = ref(env.PeopleIveWorkedWith);
 
-const workDoneByMe = [
-  {
-    name: "Spring",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/1920px-Spring_Framework_Logo_2018.svg.png",
-    link: "https://github.com/yourusername/spring-project",
-  },
-  {
-    name: "Cassandra",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cassandra_logo.svg",
-    link: "https://github.com/yourusername/cassandra-project",
-  },
-  {
-    name: "Docker",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1920px-Docker_%28container_engine%29_logo.svg.png",
-    link: "https://github.com/yourusername/docker-project",
-  },
-  {
-    name: "VueJs",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
-    link: "https://github.com/yourusername/vue-project",
-  },
-  {
-    name: "Ionic",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ionic-logo-landscape.svg/1920px-Ionic-logo-landscape.svg.png",
-    link: "https://github.com/yourusername/ionic-project",
-  },
-];
-
-// const socialMedia = [
-//   {
-//     name: "Github",
-//     image:
-//       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1920px-Octicons-mark-github.svg.png",
-//     link: "https://github.com/yourusername",
-//   },
-//   {
-//     name: "Linkedin",
-//     image:
-//       "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/1920px-LinkedIn_logo_initials.png",
-//     link: "https://www.linkedin.com/in/yourusername",
-//   },
-// ];
+const workDoneByMe = ref(env.workDoneByMe);
 </script>
