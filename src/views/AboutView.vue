@@ -8,7 +8,7 @@
         <h1
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-100 sm:text-4xl"
         >
-          Who Am I
+          I am W.K.D.Kavishka
         </h1>
 
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
