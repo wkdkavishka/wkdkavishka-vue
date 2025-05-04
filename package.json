@@ -15,7 +15,7 @@
     "build-wkdkavishka": "./deploy.sh",
     "serve-production": "vue-cli-service build && npx http-server dist",
     "electron:dev": "vue-cli-service build && electron .",
-    "electron:build": "npm run build && electron-builder",
+    "electron:build": "npm run build && electron-builder --linux --win",
     "package": "npm run electron:build"
   },
   "dependencies": {
@@ -111,7 +111,6 @@
       "icon": "public/img/icons/android-chrome-512x512.png",
       "target": [
         "nsis",
-        "msi",
         "portable"
       ]
     },
