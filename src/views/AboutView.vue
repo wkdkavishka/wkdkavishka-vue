@@ -49,17 +49,17 @@
         <article
           class="flex max-w-xl flex-col items-start justify-between py-2"
         >
-          <!-- <div class="flex items-center gap-x-4 text-xs">
+          <div class="flex items-center gap-x-4 text-xs">
             <p class="text-md leading-8 text-gray-600">As of</p>
-            <time datetime="2020-03-16" class="text-gray-500"
-              >Mar 16, 2024</time
-            >
+            <time datetime="2020-03-16" class="text-gray-500">{{
+              new Date().toLocaleString().split(" ")[0].slice(0, 8)
+            }}</time>
             <a
               href="#"
               class="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-              >Undergraduate</a
+              >{{ graduateState }}</a
             >
-          </div> -->
+          </div>
           <div class="group">
             <h3
               class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
@@ -67,28 +67,35 @@
               <a href="#">
                 <span
                   class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-100"
-                  >What I Provide
+                  >My Projects
                 </span>
               </a>
             </h3>
             <p
-              class="mt-1 line-clamp-3 text-md leading-6 text-gray-600 dark:text-slate-300"
+              class="py-1 line-clamp-3 text-md leading-6 text-gray-600 dark:text-slate-300"
             >
-              servicess provide
+              check on
+              <a
+                href="https://github.com/wkdkavishka?tab=repositories"
+                :target="viewType === 'mobile' ? '_self' : '_blank'"
+                rel="noopener noreferrer"
+              >
+                github
+              </a>
             </p>
           </div>
         </article>
       </div>
     </section>
 
-    <!--  work done  -->
+    <!--  work done title  -->
     <section>
       <div class="mx-auto max-w-7xl py-2">
         <ImageCarousel :list="images" />
       </div>
     </section>
 
-    <!-- familiar technologies -->
+    <!--  work done  -->
     <section>
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2 pt-6">
         <!-- <hr class="my-1 border-blueGray-600 dark:border-slate-500" /> -->
@@ -113,6 +120,7 @@
         </div>
       </div>
     </section>
+    <!-- end work done -->
 
     <!-- testimonials section -->
     <section>
@@ -126,8 +134,8 @@
         <image-carousel-card-active :list="cardsOfPeopleIveWorkedWith" />
       </div>
     </section>
-
-    <!-- find me Other -->
+    <!-- end testimonials section -->
+    <!-- find me section -->
     <!-- <section>
       <div class="mx-auto max-w-7xl py-2 pt-6">
         <hr class="my-1 border-blueGray-600 dark:border-slate-500" />
@@ -167,17 +175,18 @@ import ImageCarouselCardActive from "@/components/Small/carousel/ImageCarouselCa
 import { inject, ref } from "vue";
 
 const viewType = inject("viewType");
+const graduateState = ref("Undergraduate");
 
 const _images = [
-  { id: 1, url: "img/Images/1.webp" },
-  { id: 2, url: "img/Images/1.webp" },
-  { id: 3, url: "img/Images/1.webp" },
-  { id: 4, url: "img/Images/1.webp" },
-  { id: 5, url: "img/Images/1.webp" },
-  { id: 6, url: "img/Images/1.webp" },
-  { id: 7, url: "img/Images/1.webp" },
-  { id: 8, url: "img/Images/1.webp" },
-  { id: 9, url: "img/Images/1.webp" },
+  { id: 1, url: "img/Images/repo.webp" },
+  { id: 2, url: "img/Images/repo.webp" },
+  { id: 3, url: "img/Images/repo.webp" },
+  { id: 4, url: "img/Images/repo.webp" },
+  { id: 5, url: "img/Images/repo.webp" },
+  { id: 6, url: "img/Images/repo.webp" },
+  { id: 7, url: "img/Images/repo.webp" },
+  { id: 8, url: "img/Images/repo.webp" },
+  { id: 9, url: "img/Images/repo.webp" },
 ];
 const images = ref(_images);
 
